@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block content %}
+<div style="max-width:900px;margin:2.5rem auto 0 auto;">
+    <h2 style="text-align:center;margin:2rem 0 2.5rem 0;">System Logs</h2>
+    <div class="table-container card">
+        <table>
+            <thead>
+                <tr>
+                    <th>Timestamp</th>
+                    <th>Traffic</th>
+                    <th>Alerts</th>
+                    <th>Uptime</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for log in logs %}
+                <tr>
+                    <td>{{ log.timestamp }}</td>
+                    <td>{{ log.traffic }}</td>
+                    <td>{{ log.alerts }}</td>
+                    <td>{{ log.uptime }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}

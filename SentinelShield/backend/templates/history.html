@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% block content %}
+<div style="max-width:900px;margin:2.5rem auto 0 auto;">
+    <h2 style="text-align:center;margin:2rem 0 2.5rem 0;">Historical Data</h2>
+    <div class="card" style="padding:2rem;">
+        <canvas id="historyChart" width="800" height="350"></canvas>
+    </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+    fetch('/logs.json')
+        .then(res => res.json())
+        .then(data => {
+            const timestamps = data.map(d => d.timestamp);
+            const traffic = data.map(d => parseInt(d.traffic));
+            const alerts = data.map(d => parseInt(d.alerts));
+
+            new Chart(document.getElementById('historyChart'), {
+                type: 'line',
+                data: {
+                    labels: timestamps,
+                    datasets: [
+                        {
+                            label: 'Traffic',
+                            data: traffic,
+                            borderColor: 'blue',
+                            fill: false
+                        },
+                        {
+                            label: 'Alerts',
+                            data: alerts,
+                            borderColor: 'red',
+                            fill: false
+                        }
+                    ]
+                }
+            });
+        });
+</script>
+{% endblock %}

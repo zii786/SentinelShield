@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="dashboard-container">
+    <h2 style="text-align:center; margin-top:2rem;">Real-Time Dashboard</h2>
+    <div class="card-grid">
+        <div class="card" id="traffic">Loading traffic...</div>
+        <div class="card" id="alerts">Loading alerts...</div>
+        <div class="card" id="uptime">Loading uptime...</div>
+        <div class="card" id="timestamp">Loading time...</div>
+    </div>
+</div>
+<script>
+    function fetchData() {
+        fetch('/data')
+            .then(res => res.json())
+            .then(data => {
+                document.getElementById('traffic').innerText = "Traffic: " + data.traffic;
+                document.getElementById('alerts').innerText = "Alerts: " + data.alerts;
+                document.getElementById('uptime').innerText = "Uptime: " + data.uptime;
+                document.getElementById('timestamp').innerText = "Last Updated: " + data.timestamp;
+            });
+    }
+    setInterval(fetchData, 5000);
+    fetchData();
+</script>
+{% endblock %}
