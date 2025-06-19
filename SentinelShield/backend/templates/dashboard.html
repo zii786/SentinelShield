@@ -8,6 +8,46 @@
         <div class="card" id="uptime">Loading uptime...</div>
         <div class="card" id="timestamp">Loading time...</div>
     </div>
+    <div style="margin-top:2rem;">
+        <h3>Recent Suspicious Events</h3>
+        <div style="margin-bottom:1rem; display:flex; gap:1rem; align-items:center; flex-wrap:wrap;">
+            <input type="text" id="search-ip" placeholder="Search by IP..." style="padding:6px 12px; border-radius:6px; border:1px solid #ccc; min-width:180px;">
+            <select id="filter-type" style="padding:6px 12px; border-radius:6px; border:1px solid #ccc;">
+                <option value="">All Types</option>
+                <option value="Traffic Spike">Traffic Spike</option>
+                <option value="Rate Limit Exceeded">Rate Limit Exceeded</option>
+                <option value="Suspicious Header">Suspicious Header</option>
+            </select>
+            <label>Start:
+                <input type="datetime-local" id="start-datetime" style="padding:6px 12px; border-radius:6px; border:1px solid #ccc;">
+            </label>
+            <label>End:
+                <input type="datetime-local" id="end-datetime" style="padding:6px 12px; border-radius:6px; border:1px solid #ccc;">
+            </label>
+        </div>
+        <table id="events-table" style="width:100%; border-collapse:collapse; margin-top:1rem;">
+            <thead>
+                <tr style="background:#f2f2f2;">
+                    <th style="padding:8px; border:1px solid #ddd;">Type</th>
+                    <th style="padding:8px; border:1px solid #ddd;">IP</th>
+                    <th style="padding:8px; border:1px solid #ddd;">Timestamp</th>
+                    <th style="padding:8px; border:1px solid #ddd;">Details</th>
+                </tr>
+            </thead>
+            <tbody id="events-tbody">
+                {% for event in recent_events %}
+                <tr class="{% if event.type == 'Traffic Spike' %}critical-event{% elif event.type == 'Rate Limit Exceeded' %}warning-event{% endif %}">
+                    <td style="padding:8px; border:1px solid #ddd;">{{ event.type }}</td>
+                    <td style="padding:8px; border:1px solid #ddd;">{{ event.ip if event.ip else '-' }}</td>
+                    <td style="padding:8px; border:1px solid #ddd;">{{ event.timestamp }}</td>
+                    <td style="padding:8px; border:1px solid #ddd;">{{ event.details }}</td>
+                </tr>
+                {% else %}
+                <tr><td colspan="4" style="text-align:center; color:#888;">No suspicious events detected.</td></tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
 </div>
 <script>
     function fetchData() {
@@ -22,5 +62,64 @@
     }
     setInterval(fetchData, 5000);
     fetchData();
+
+    let allEvents = [];
+    function renderEvents(events) {
+        const tbody = document.getElementById('events-tbody');
+        tbody.innerHTML = '';
+        if (events.length === 0) {
+            tbody.innerHTML = '<tr><td colspan="4" style="text-align:center; color:#888;">No suspicious events detected.</td></tr>';
+        } else {
+            events.forEach(event => {
+                let rowClass = '';
+                if (event.type === 'Traffic Spike') rowClass = 'critical-event';
+                else if (event.type === 'Rate Limit Exceeded') rowClass = 'warning-event';
+                tbody.innerHTML += `<tr class='${rowClass}'>
+                    <td style='padding:8px; border:1px solid #ddd;'>${event.type}</td>
+                    <td style='padding:8px; border:1px solid #ddd;'>${event.ip ? event.ip : '-'}</td>
+                    <td style='padding:8px; border:1px solid #ddd;'>${event.timestamp}</td>
+                    <td style='padding:8px; border:1px solid #ddd;'>${event.details}</td>
+                </tr>`;
+            });
+        }
+    }
+
+    function filterAndRenderEvents() {
+        const searchIp = document.getElementById('search-ip').value.trim().toLowerCase();
+        const filterType = document.getElementById('filter-type').value;
+        const startDt = document.getElementById('start-datetime').value;
+        const endDt = document.getElementById('end-datetime').value;
+        let filtered = allEvents.filter(event => {
+            const matchesIp = !searchIp || (event.ip && event.ip.toLowerCase().includes(searchIp));
+            const matchesType = !filterType || event.type === filterType;
+            let matchesDate = true;
+            if (startDt) {
+                const eventTime = new Date(event.timestamp.replace(' ', 'T'));
+                matchesDate = matchesDate && (eventTime >= new Date(startDt));
+            }
+            if (endDt) {
+                const eventTime = new Date(event.timestamp.replace(' ', 'T'));
+                matchesDate = matchesDate && (eventTime <= new Date(endDt));
+            }
+            return matchesIp && matchesType && matchesDate;
+        });
+        renderEvents(filtered);
+    }
+
+    function fetchEvents() {
+        fetch('/recent-events')
+            .then(res => res.json())
+            .then(events => {
+                allEvents = events;
+                filterAndRenderEvents();
+            });
+    }
+    setInterval(fetchEvents, 5000);
+    fetchEvents();
+
+    document.getElementById('search-ip').addEventListener('input', filterAndRenderEvents);
+    document.getElementById('filter-type').addEventListener('change', filterAndRenderEvents);
+    document.getElementById('start-datetime').addEventListener('change', filterAndRenderEvents);
+    document.getElementById('end-datetime').addEventListener('change', filterAndRenderEvents);
 </script>
 {% endblock %}

@@ -270,3 +270,22 @@ body.dark-theme .login-container {
     color: #888;
     margin-top: 1.5rem;
 }
+
+/* Highlight critical and warning events in the suspicious events table */
+.critical-event {
+    background: #e53935 !important;
+    color: #fff !important;
+}
+.warning-event {
+    background: #fff3cd !important;
+    color: #856404 !important;
+}
+
+body.dark-theme .critical-event {
+    background: #b71c1c !important;
+    color: #fff !important;
+}
+body.dark-theme .warning-event {
+    background: #bfae5a !important;
+    color: #232526 !important;
+}
