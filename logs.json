@@ -1,0 +1,32 @@
+[
+    {
+        "traffic": "1111 users online",
+        "alerts": "1 critical alerts",
+        "uptime": "99.97%",
+        "timestamp": "2025-06-20 01:51:57"
+    },
+    {
+        "traffic": "1509 users online",
+        "alerts": "3 critical alerts",
+        "uptime": "99.93%",
+        "timestamp": "2025-06-20 01:52:02"
+    },
+    {
+        "traffic": "1722 users online",
+        "alerts": "5 critical alerts",
+        "uptime": "99.92%",
+        "timestamp": "2025-06-20 01:52:07"
+    },
+    {
+        "traffic": "1174 users online",
+        "alerts": "2 critical alerts",
+        "uptime": "99.95%",
+        "timestamp": "2025-06-20 01:52:12"
+    },
+    {
+        "traffic": "1497 users online",
+        "alerts": "2 critical alerts",
+        "uptime": "99.99%",
+        "timestamp": "2025-06-20 01:52:17"
+    }
+]

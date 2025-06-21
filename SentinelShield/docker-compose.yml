@@ -1,22 +1,48 @@
-version: '3.8'
-
 services:
-  backend:
-    build: .
-    container_name: sentinelshield-backend
+  # 1. The Target Website we are protecting
+  target_app:
+    build:
+      context: ./target_website
+    container_name: target-website
     restart: always
+    expose:
+      - "5001"
+    volumes:
+      - ./target_website:/app
+
+  # 2. The SentinelShield Python Application
+  sentinelshield_app:
+    build:
+      context: . # Uses the Dockerfile in the root directory
+    container_name: sentinelshield-app
+    restart: always
+    env_file:
+      - ./backend/.env
     volumes:
       - ./backend:/app
-    expose:
-      - 5000
+      # This shared volume is how it reads Nginx logs
+      - nginx_logs:/var/log/nginx
+    depends_on:
+      - target_app
 
+  # 3. The Nginx WAF and Reverse Proxy
   nginx:
-    image: nginx:latest
-    container_name: sentinelshield-nginx
+    build:
+      context: ./nginx
+    container_name: sentinelshield-nginx-waf
     restart: always
     ports:
+      # Port 80 for public traffic to the target site
       - "80:80"
+      # Port 8080 for the admin to access the SentinelShield dashboard
+      - "8080:8080"
     volumes:
-      - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
+      # This shared volume is where Nginx writes logs
+      - nginx_logs:/var/log/nginx
     depends_on:
-      - backend
+      - target_app
+      - sentinelshield_app
+
+volumes:
+  # The shared volume for Nginx logs
+  nginx_logs:

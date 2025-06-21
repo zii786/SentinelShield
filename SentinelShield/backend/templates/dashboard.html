@@ -3,10 +3,10 @@
 <div class="dashboard-container">
     <h2 style="text-align:center; margin-top:2rem;">Real-Time Dashboard</h2>
     <div class="card-grid">
-        <div class="card" id="traffic">Loading traffic...</div>
-        <div class="card" id="alerts">Loading alerts...</div>
-        <div class="card" id="uptime">Loading uptime...</div>
-        <div class="card" id="timestamp">Loading time...</div>
+        <div class="card" id="total_requests">Loading total requests...</div>
+        <div class="card" id="unique_visitors">Loading unique visitors...</div>
+        <div class="card" id="requests_per_minute">Loading requests per minute...</div>
+        <div class="card" id="last_updated">Loading last updated time...</div>
     </div>
     <div style="margin-top:2rem;">
         <h3>Recent Suspicious Events</h3>
@@ -25,28 +25,34 @@
                 <input type="datetime-local" id="end-datetime" style="padding:6px 12px; border-radius:6px; border:1px solid #ccc;">
             </label>
         </div>
-        <table id="events-table" style="width:100%; border-collapse:collapse; margin-top:1rem;">
-            <thead>
-                <tr style="background:#f2f2f2;">
-                    <th style="padding:8px; border:1px solid #ddd;">Type</th>
-                    <th style="padding:8px; border:1px solid #ddd;">IP</th>
-                    <th style="padding:8px; border:1px solid #ddd;">Timestamp</th>
-                    <th style="padding:8px; border:1px solid #ddd;">Details</th>
-                </tr>
-            </thead>
-            <tbody id="events-tbody">
-                {% for event in recent_events %}
-                <tr class="{% if event.type == 'Traffic Spike' %}critical-event{% elif event.type == 'Rate Limit Exceeded' %}warning-event{% endif %}">
-                    <td style="padding:8px; border:1px solid #ddd;">{{ event.type }}</td>
-                    <td style="padding:8px; border:1px solid #ddd;">{{ event.ip if event.ip else '-' }}</td>
-                    <td style="padding:8px; border:1px solid #ddd;">{{ event.timestamp }}</td>
-                    <td style="padding:8px; border:1px solid #ddd;">{{ event.details }}</td>
-                </tr>
-                {% else %}
-                <tr><td colspan="4" style="text-align:center; color:#888;">No suspicious events detected.</td></tr>
-                {% endfor %}
-            </tbody>
-        </table>
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Type</th>
+                        <th>IP Address</th>
+                        <th>Timestamp</th>
+                        <th>Details</th>
+                    </tr>
+                </thead>
+                <tbody id="events-tbody">
+                    {% for event in recent_events %}
+                    <tr class="{% if event.type == 'Suspicious User-Agent' %}warning-event{% endif %}">
+                        <td>{{ loop.index }}</td>
+                        <td>{{ event.type }}</td>
+                        <td>{{ event.ip | default('-') }}</td>
+                        <td>{{ event.timestamp }}</td>
+                        <td>{{ event.details }}</td>
+                    </tr>
+                    {% else %}
+                    <tr>
+                        <td colspan="5">No suspicious events recorded yet.</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
     </div>
 </div>
 <script>
@@ -54,10 +60,10 @@
         fetch('/data')
             .then(res => res.json())
             .then(data => {
-                document.getElementById('traffic').innerText = "Traffic: " + data.traffic;
-                document.getElementById('alerts').innerText = "Alerts: " + data.alerts;
-                document.getElementById('uptime').innerText = "Uptime: " + data.uptime;
-                document.getElementById('timestamp').innerText = "Last Updated: " + data.timestamp;
+                document.getElementById('total_requests').innerText = "Total Requests: " + data.total_requests;
+                document.getElementById('unique_visitors').innerText = "Unique Visitors: " + data.unique_visitors;
+                document.getElementById('requests_per_minute').innerText = "Requests/Min: " + data.requests_per_minute;
+                document.getElementById('last_updated').innerText = "Last Updated: " + data.last_updated;
             });
     }
     setInterval(fetchData, 5000);
@@ -68,18 +74,20 @@
         const tbody = document.getElementById('events-tbody');
         tbody.innerHTML = '';
         if (events.length === 0) {
-            tbody.innerHTML = '<tr><td colspan="4" style="text-align:center; color:#888;">No suspicious events detected.</td></tr>';
+            tbody.innerHTML = '<tr><td colspan="5">No suspicious events detected.</td></tr>';
         } else {
-            events.forEach(event => {
+            events.forEach((event, index) => {
                 let rowClass = '';
-                if (event.type === 'Traffic Spike') rowClass = 'critical-event';
-                else if (event.type === 'Rate Limit Exceeded') rowClass = 'warning-event';
-                tbody.innerHTML += `<tr class='${rowClass}'>
-                    <td style='padding:8px; border:1px solid #ddd;'>${event.type}</td>
-                    <td style='padding:8px; border:1px solid #ddd;'>${event.ip ? event.ip : '-'}</td>
-                    <td style='padding:8px; border:1px solid #ddd;'>${event.timestamp}</td>
-                    <td style='padding:8px; border:1px solid #ddd;'>${event.details}</td>
-                </tr>`;
+                if (event.type === 'Suspicious User-Agent') rowClass = 'warning-event';
+                
+                tbody.innerHTML += `
+                    <tr class='${rowClass}'>
+                        <td>${index + 1}</td>
+                        <td>${event.type}</td>
+                        <td>${event.ip ? event.ip : '-'}</td>
+                        <td>${event.timestamp}</td>
+                        <td>${event.details}</td>
+                    </tr>`;
             });
         }
     }

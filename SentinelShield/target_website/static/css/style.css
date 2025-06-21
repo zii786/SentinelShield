@@ -1,0 +1,4 @@
+/* Custom styles can go here */
+body {
+    padding-bottom: 70px; /* Adjust for the fixed footer height */
+} 

@@ -3,13 +3,18 @@ FROM python:3.11-slim
 
 WORKDIR /app
 
-COPY backend/ /app/
-RUN pip install --no-cache-dir flask
+# Copy the backend application code
+COPY ./backend/ /app/
 
-# If you have a requirements.txt, use:
-# COPY backend/requirements.txt .
-# RUN pip install --no-cache-dir -r requirements.txt
+# Install dependencies from requirements.txt
+RUN pip install --no-cache-dir -r requirements.txt
 
-EXPOSE 5000
+# Make port 8000 available to the world outside this container
+EXPOSE 8000
 
-CMD ["python", "app.py"]
+# Define environment variables for Gunicorn
+ENV PYTHONDONTWRITEBYTECODE 1
+ENV PYTHONUNBUFFERED 1
+
+# Run the app. The Gunicorn server will bind to 0.0.0.0:8000
+CMD ["gunicorn", "--bind", "0.0.0.0:8000", "app:app"]

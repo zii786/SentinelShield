@@ -152,58 +152,65 @@ body.dark-theme .card {
 .table-container {
     overflow-x: auto;
     background: white;
-    padding: 1.5rem;
+    padding: 1rem 1.5rem;
     border-radius: 16px;
-    box-shadow: 0 2px 12px rgba(42, 82, 152, 0.08);
-    margin-top: 2rem;
+    box-shadow: 0 4px 24px rgba(42, 82, 152, 0.10);
+    margin-top: 1.5rem;
 }
 
-table {
+body.dark-theme .table-container {
+    background: #2c2f33;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.2);
+}
+
+.table-container table {
     width: 100%;
-    border-collapse: separate;
-    border-spacing: 0;
-    font-size: 1rem;
-    background: transparent;
+    border-collapse: collapse;
+    font-size: 0.95rem;
 }
 
-table, th, td {
-    border: none;
-}
-
-th, td {
-    padding: 1rem 0.75rem;
+.table-container th, .table-container td {
+    padding: 12px 15px;
     text-align: left;
     border-bottom: 1px solid #e0e0e0;
 }
 
-th {
-    background: linear-gradient(90deg, #e0eafc 0%, #f5f7fa 100%);
-    font-weight: 600;
-    letter-spacing: 0.03em;
+body.dark-theme .table-container th, body.dark-theme .table-container td {
+    border-bottom: 1px solid #4f545c;
 }
 
-tr:last-child td {
+.table-container th {
+    background-color: #f8f9fa;
+    font-weight: 600;
+}
+
+body.dark-theme .table-container th {
+    background-color: #3a3f44;
+}
+
+.table-container tr:last-child td {
     border-bottom: none;
 }
 
-tr:hover {
-    background: #f0f4fa;
-    transition: background 0.2s;
+.table-container tr:hover {
+    background-color: #f1f5f9;
 }
 
-body.dark-theme .table-container {
-    background: #232526;
-    color: #f1f1f1;
-    box-shadow: 0 2px 12px rgba(30, 30, 30, 0.18);
+body.dark-theme .table-container tr:hover {
+    background-color: #3f444a;
 }
 
-body.dark-theme th {
-    background: linear-gradient(90deg, #232526 0%, #414345 100%);
-    color: #ffd700;
+.table-container td:first-child, .table-container th:first-child {
+    width: 50px;
+    text-align: center;
 }
 
-body.dark-theme tr:hover {
-    background: #232536;
+.table-container .warning-event {
+    background-color: #fff3cd;
+}
+
+body.dark-theme .table-container .warning-event {
+    background-color: #664d03;
 }
 
 /* Login */

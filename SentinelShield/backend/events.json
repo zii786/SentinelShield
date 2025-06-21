@@ -1,0 +1,698 @@
+[
+    {
+        "type": "Suspicious Header",
+        "ip": "127.0.0.1",
+        "header": "Referer",
+        "value": "http://127.0.0.1:5000/dashboard",
+        "timestamp": "2025-06-21 02:09:02",
+        "details": "Suspicious header detected: Referer"
+    },
+    {
+        "type": "Suspicious Header",
+        "ip": "127.0.0.1",
+        "header": "Referer",
+        "value": "http://127.0.0.1:5000/dashboard",
+        "timestamp": "2025-06-21 02:09:07",
+        "details": "Suspicious header detected: Referer"
+    },
+    {
+        "type": "Suspicious Header",
+        "ip": "127.0.0.1",
+        "header": "Referer",
+        "value": "http://localhost:5000/dashboard",
+        "timestamp": "2025-06-21 02:09:09",
+        "details": "Suspicious header detected: Referer"
+    },
+    {
+        "type": "Suspicious Header",
+        "ip": "127.0.0.1",
+        "header": "Referer",
+        "value": "http://127.0.0.1:5000/dashboard",
+        "timestamp": "2025-06-21 02:09:10",
+        "details": "Suspicious header detected: Referer"
+    },
+    {
+        "type": "Suspicious Header",
+        "ip": "127.0.0.1",
+        "header": "Referer",
+        "value": "http://127.0.0.1:5000/history",
+        "timestamp": "2025-06-21 02:09:10",
+        "details": "Suspicious header detected: Referer"
+    },
+    {
+        "type": "Suspicious Header",
+        "ip": "127.0.0.1",
+        "header": "Referer",
+        "value": "http://127.0.0.1:5000/history",
+        "timestamp": "2025-06-21 02:09:10",
+        "details": "Suspicious header detected: Referer"
+    },
+    {
+        "type": "Suspicious Header",
+        "ip": "127.0.0.1",
+        "header": "Referer",
+        "value": "http://127.0.0.1:5000/history",
+        "timestamp": "2025-06-21 02:09:12",
+        "details": "Suspicious header detected: Referer"
+    },
+    {
+        "type": "Rate Limit Exceeded",
+        "ip": "127.0.0.1",
+        "count": 21,
+        "timestamp": "2025-06-21 02:09:12",
+        "details": "Too many requests from this IP in a short time."
+    },
+    {
+        "type": "Suspicious Header",
+        "ip": "127.0.0.1",
+        "header": "Referer",
+        "value": "http://127.0.0.1:5000/logs",
+        "timestamp": "2025-06-21 02:09:12",
+        "details": "Suspicious header detected: Referer"
+    },
+    {
+        "type": "Suspicious Header",
+        "ip": "127.0.0.1",
+        "header": "Referer",
+        "value": "http://localhost:5000/dashboard",
+        "timestamp": "2025-06-21 02:10:09",
+        "details": "Suspicious header detected: Referer"
+    },
+    {
+        "type": "Suspicious Header",
+        "ip": "127.0.0.1",
+        "header": "Referer",
+        "value": "http://localhost:5000/dashboard",
+        "timestamp": "2025-06-21 02:10:09",
+        "details": "Suspicious header detected: Referer"
+    },
+    {
+        "type": "Suspicious Header",
+        "ip": "127.0.0.1",
+        "header": "Referer",
+        "value": "http://localhost:5000/dashboard",
+        "timestamp": "2025-06-21 02:11:09",
+        "details": "Suspicious header detected: Referer"
+    },
+    {
+        "type": "Suspicious Header",
+        "ip": "172.18.0.1",
+        "header": "Referer",
+        "value": "http://localhost:8080/",
+        "timestamp": "2025-06-21 10:27:00",
+        "details": "Suspicious header detected: Referer"
+    },
+    {
+        "type": "Suspicious Header",
+        "ip": "172.18.0.1",
+        "header": "Referer",
+        "value": "http://localhost:8080/",
+        "timestamp": "2025-06-21 10:27:00",
+        "details": "Suspicious header detected: Referer"
+    },
+    {
+        "type": "Suspicious Header",
+        "ip": "172.18.0.1",
+        "header": "Referer",
+        "value": "http://localhost:8080/",
+        "timestamp": "2025-06-21 10:27:12",
+        "details": "Suspicious header detected: Referer"
+    },
+    {
+        "type": "Suspicious Header",
+        "ip": "172.18.0.1",
+        "header": "Referer",
+        "value": "http://localhost:8080/",
+        "timestamp": "2025-06-21 10:27:12",
+        "details": "Suspicious header detected: Referer"
+    },
+    {
+        "type": "Suspicious Header",
+        "ip": "172.18.0.1",
+        "header": "Referer",
+        "value": "http://localhost:8080/",
+        "timestamp": "2025-06-21 10:27:22",
+        "details": "Suspicious header detected: Referer"
+    },
+    {
+        "type": "Suspicious Header",
+        "ip": "172.18.0.1",
+        "header": "Referer",
+        "value": "http://localhost:8080/",
+        "timestamp": "2025-06-21 10:27:22",
+        "details": "Suspicious header detected: Referer"
+    },
+    {
+        "type": "Suspicious Header",
+        "ip": "172.18.0.1",
+        "header": "Referer",
+        "value": "http://localhost:8080/dashboard",
+        "timestamp": "2025-06-21 10:27:22",
+        "details": "Suspicious header detected: Referer"
+    },
+    {
+        "type": "Suspicious Header",
+        "ip": "172.18.0.1",
+        "header": "Referer",
+        "value": "http://localhost:8080/dashboard",
+        "timestamp": "2025-06-21 10:27:22",
+        "details": "Suspicious header detected: Referer"
+    },
+    {
+        "type": "Suspicious Header",
+        "ip": "172.18.0.1",
+        "header": "Referer",
+        "value": "http://localhost:8080/dashboard",
+        "timestamp": "2025-06-21 10:27:22",
+        "details": "Suspicious header detected: Referer"
+    },
+    {
+        "type": "Suspicious Header",
+        "ip": "172.18.0.1",
+        "header": "Referer",
+        "value": "http://localhost:8080/dashboard",
+        "timestamp": "2025-06-21 10:27:27",
+        "details": "Suspicious header detected: Referer"
+    },
+    {
+        "type": "Suspicious Header",
+        "ip": "172.18.0.1",
+        "header": "Referer",
+        "value": "http://localhost:8080/dashboard",
+        "timestamp": "2025-06-21 10:27:27",
+        "details": "Suspicious header detected: Referer"
+    },
+    {
+        "type": "Suspicious Header",
+        "ip": "172.18.0.1",
+        "header": "Referer",
+        "value": "http://localhost:8080/dashboard",
+        "timestamp": "2025-06-21 10:27:32",
+        "details": "Suspicious header detected: Referer"
+    },
+    {
+        "type": "Suspicious Header",
+        "ip": "172.18.0.1",
+        "header": "Referer",
+        "value": "http://localhost:8080/dashboard",
+        "timestamp": "2025-06-21 10:27:32",
+        "details": "Suspicious header detected: Referer"
+    },
+    {
+        "type": "Suspicious Header",
+        "ip": "172.18.0.1",
+        "header": "Referer",
+        "value": "http://localhost:8080/dashboard",
+        "timestamp": "2025-06-21 10:27:37",
+        "details": "Suspicious header detected: Referer"
+    },
+    {
+        "type": "Suspicious Header",
+        "ip": "172.18.0.1",
+        "header": "Referer",
+        "value": "http://localhost:8080/dashboard",
+        "timestamp": "2025-06-21 10:27:37",
+        "details": "Suspicious header detected: Referer"
+    },
+    {
+        "type": "Suspicious Header",
+        "ip": "172.18.0.1",
+        "header": "Referer",
+        "value": "http://localhost:8080/dashboard",
+        "timestamp": "2025-06-21 10:27:39",
+        "details": "Suspicious header detected: Referer"
+    },
+    {
+        "type": "Suspicious Header",
+        "ip": "172.18.0.1",
+        "header": "Referer",
+        "value": "http://localhost:8080/history",
+        "timestamp": "2025-06-21 10:27:39",
+        "details": "Suspicious header detected: Referer"
+    },
+    {
+        "type": "Suspicious Header",
+        "ip": "172.18.0.1",
+        "header": "Referer",
+        "value": "http://localhost:8080/history",
+        "timestamp": "2025-06-21 10:27:39",
+        "details": "Suspicious header detected: Referer"
+    },
+    {
+        "type": "Suspicious Header",
+        "ip": "172.18.0.1",
+        "header": "Referer",
+        "value": "http://localhost:8080/history",
+        "timestamp": "2025-06-21 10:27:41",
+        "details": "Suspicious header detected: Referer"
+    },
+    {
+        "type": "Rate Limit Exceeded",
+        "ip": "172.18.0.1",
+        "count": 21,
+        "timestamp": "2025-06-21 10:27:41",
+        "details": "Too many requests from this IP in a short time."
+    },
+    {
+        "type": "Suspicious Header",
+        "ip": "172.18.0.1",
+        "header": "Referer",
+        "value": "http://localhost:8080/logs",
+        "timestamp": "2025-06-21 10:27:41",
+        "details": "Suspicious header detected: Referer"
+    },
+    {
+        "type": "Rate Limit Exceeded",
+        "ip": "172.18.0.1",
+        "count": 22,
+        "timestamp": "2025-06-21 10:27:42",
+        "details": "Too many requests from this IP in a short time."
+    },
+    {
+        "type": "Suspicious Header",
+        "ip": "172.18.0.1",
+        "header": "Referer",
+        "value": "http://localhost:8080/logs",
+        "timestamp": "2025-06-21 10:27:42",
+        "details": "Suspicious header detected: Referer"
+    },
+    {
+        "type": "Rate Limit Exceeded",
+        "ip": "172.18.0.1",
+        "count": 23,
+        "timestamp": "2025-06-21 10:27:42",
+        "details": "Too many requests from this IP in a short time."
+    },
+    {
+        "type": "Suspicious Header",
+        "ip": "172.18.0.1",
+        "header": "Referer",
+        "value": "http://localhost:8080/dashboard",
+        "timestamp": "2025-06-21 10:27:42",
+        "details": "Suspicious header detected: Referer"
+    },
+    {
+        "type": "Rate Limit Exceeded",
+        "ip": "172.18.0.1",
+        "count": 24,
+        "timestamp": "2025-06-21 10:27:42",
+        "details": "Too many requests from this IP in a short time."
+    },
+    {
+        "type": "Suspicious Header",
+        "ip": "172.18.0.1",
+        "header": "Referer",
+        "value": "http://localhost:8080/dashboard",
+        "timestamp": "2025-06-21 10:27:42",
+        "details": "Suspicious header detected: Referer"
+    },
+    {
+        "type": "Rate Limit Exceeded",
+        "ip": "172.18.0.1",
+        "count": 25,
+        "timestamp": "2025-06-21 10:27:42",
+        "details": "Too many requests from this IP in a short time."
+    },
+    {
+        "type": "Suspicious Header",
+        "ip": "172.18.0.1",
+        "header": "Referer",
+        "value": "http://localhost:8080/dashboard",
+        "timestamp": "2025-06-21 10:27:42",
+        "details": "Suspicious header detected: Referer"
+    },
+    {
+        "type": "Rate Limit Exceeded",
+        "ip": "172.18.0.1",
+        "count": 26,
+        "timestamp": "2025-06-21 10:27:47",
+        "details": "Too many requests from this IP in a short time."
+    },
+    {
+        "type": "Suspicious Header",
+        "ip": "172.18.0.1",
+        "header": "Referer",
+        "value": "http://localhost:8080/dashboard",
+        "timestamp": "2025-06-21 10:27:47",
+        "details": "Suspicious header detected: Referer"
+    },
+    {
+        "type": "Rate Limit Exceeded",
+        "ip": "172.18.0.1",
+        "count": 27,
+        "timestamp": "2025-06-21 10:27:47",
+        "details": "Too many requests from this IP in a short time."
+    },
+    {
+        "type": "Suspicious Header",
+        "ip": "172.18.0.1",
+        "header": "Referer",
+        "value": "http://localhost:8080/dashboard",
+        "timestamp": "2025-06-21 10:27:47",
+        "details": "Suspicious header detected: Referer"
+    },
+    {
+        "type": "Rate Limit Exceeded",
+        "ip": "172.18.0.1",
+        "count": 28,
+        "timestamp": "2025-06-21 10:27:52",
+        "details": "Too many requests from this IP in a short time."
+    },
+    {
+        "type": "Suspicious Header",
+        "ip": "172.18.0.1",
+        "header": "Referer",
+        "value": "http://localhost:8080/dashboard",
+        "timestamp": "2025-06-21 10:27:52",
+        "details": "Suspicious header detected: Referer"
+    },
+    {
+        "type": "Rate Limit Exceeded",
+        "ip": "172.18.0.1",
+        "count": 29,
+        "timestamp": "2025-06-21 10:27:52",
+        "details": "Too many requests from this IP in a short time."
+    },
+    {
+        "type": "Suspicious Header",
+        "ip": "172.18.0.1",
+        "header": "Referer",
+        "value": "http://localhost:8080/dashboard",
+        "timestamp": "2025-06-21 10:27:52",
+        "details": "Suspicious header detected: Referer"
+    },
+    {
+        "type": "Rate Limit Exceeded",
+        "ip": "172.18.0.1",
+        "count": 30,
+        "timestamp": "2025-06-21 10:27:57",
+        "details": "Too many requests from this IP in a short time."
+    },
+    {
+        "type": "Suspicious Header",
+        "ip": "172.18.0.1",
+        "header": "Referer",
+        "value": "http://localhost:8080/dashboard",
+        "timestamp": "2025-06-21 10:27:57",
+        "details": "Suspicious header detected: Referer"
+    },
+    {
+        "type": "Rate Limit Exceeded",
+        "ip": "172.18.0.1",
+        "count": 31,
+        "timestamp": "2025-06-21 10:27:57",
+        "details": "Too many requests from this IP in a short time."
+    },
+    {
+        "type": "Suspicious Header",
+        "ip": "172.18.0.1",
+        "header": "Referer",
+        "value": "http://localhost:8080/dashboard",
+        "timestamp": "2025-06-21 10:27:57",
+        "details": "Suspicious header detected: Referer"
+    },
+    {
+        "type": "Rate Limit Exceeded",
+        "ip": "172.18.0.1",
+        "count": 29,
+        "timestamp": "2025-06-21 10:28:02",
+        "details": "Too many requests from this IP in a short time."
+    },
+    {
+        "type": "Suspicious Header",
+        "ip": "172.18.0.1",
+        "header": "Referer",
+        "value": "http://localhost:8080/dashboard",
+        "timestamp": "2025-06-21 10:28:02",
+        "details": "Suspicious header detected: Referer"
+    },
+    {
+        "type": "Rate Limit Exceeded",
+        "ip": "172.18.0.1",
+        "count": 30,
+        "timestamp": "2025-06-21 10:28:02",
+        "details": "Too many requests from this IP in a short time."
+    },
+    {
+        "type": "Suspicious Header",
+        "ip": "172.18.0.1",
+        "header": "Referer",
+        "value": "http://localhost:8080/dashboard",
+        "timestamp": "2025-06-21 10:28:02",
+        "details": "Suspicious header detected: Referer"
+    },
+    {
+        "type": "Rate Limit Exceeded",
+        "ip": "172.18.0.1",
+        "count": 31,
+        "timestamp": "2025-06-21 10:28:07",
+        "details": "Too many requests from this IP in a short time."
+    },
+    {
+        "type": "Suspicious Header",
+        "ip": "172.18.0.1",
+        "header": "Referer",
+        "value": "http://localhost:8080/dashboard",
+        "timestamp": "2025-06-21 10:28:07",
+        "details": "Suspicious header detected: Referer"
+    },
+    {
+        "type": "Rate Limit Exceeded",
+        "ip": "172.18.0.1",
+        "count": 32,
+        "timestamp": "2025-06-21 10:28:07",
+        "details": "Too many requests from this IP in a short time."
+    },
+    {
+        "type": "Suspicious Header",
+        "ip": "172.18.0.1",
+        "header": "Referer",
+        "value": "http://localhost:8080/dashboard",
+        "timestamp": "2025-06-21 10:28:07",
+        "details": "Suspicious header detected: Referer"
+    },
+    {
+        "type": "Rate Limit Exceeded",
+        "ip": "172.18.0.1",
+        "count": 31,
+        "timestamp": "2025-06-21 10:28:12",
+        "details": "Too many requests from this IP in a short time."
+    },
+    {
+        "type": "Suspicious Header",
+        "ip": "172.18.0.1",
+        "header": "Referer",
+        "value": "http://localhost:8080/dashboard",
+        "timestamp": "2025-06-21 10:28:12",
+        "details": "Suspicious header detected: Referer"
+    },
+    {
+        "type": "Rate Limit Exceeded",
+        "ip": "172.18.0.1",
+        "count": 32,
+        "timestamp": "2025-06-21 10:28:12",
+        "details": "Too many requests from this IP in a short time."
+    },
+    {
+        "type": "Suspicious Header",
+        "ip": "172.18.0.1",
+        "header": "Referer",
+        "value": "http://localhost:8080/dashboard",
+        "timestamp": "2025-06-21 10:28:12",
+        "details": "Suspicious header detected: Referer"
+    },
+    {
+        "type": "Rate Limit Exceeded",
+        "ip": "172.18.0.1",
+        "count": 33,
+        "timestamp": "2025-06-21 10:28:17",
+        "details": "Too many requests from this IP in a short time."
+    },
+    {
+        "type": "Suspicious Header",
+        "ip": "172.18.0.1",
+        "header": "Referer",
+        "value": "http://localhost:8080/dashboard",
+        "timestamp": "2025-06-21 10:28:17",
+        "details": "Suspicious header detected: Referer"
+    },
+    {
+        "type": "Rate Limit Exceeded",
+        "ip": "172.18.0.1",
+        "count": 34,
+        "timestamp": "2025-06-21 10:28:17",
+        "details": "Too many requests from this IP in a short time."
+    },
+    {
+        "type": "Suspicious Header",
+        "ip": "172.18.0.1",
+        "header": "Referer",
+        "value": "http://localhost:8080/dashboard",
+        "timestamp": "2025-06-21 10:28:17",
+        "details": "Suspicious header detected: Referer"
+    },
+    {
+        "type": "Suspicious Header",
+        "ip": "127.0.0.1",
+        "header": "Referer",
+        "value": "http://127.0.0.1:5000/",
+        "timestamp": "2025-06-21 10:28:20",
+        "details": "Suspicious header detected: Referer"
+    },
+    {
+        "type": "Suspicious Header",
+        "ip": "127.0.0.1",
+        "header": "Referer",
+        "value": "http://127.0.0.1:5000/",
+        "timestamp": "2025-06-21 10:28:20",
+        "details": "Suspicious header detected: Referer"
+    },
+    {
+        "type": "Rate Limit Exceeded",
+        "ip": "172.18.0.1",
+        "count": 35,
+        "timestamp": "2025-06-21 10:28:22",
+        "details": "Too many requests from this IP in a short time."
+    },
+    {
+        "type": "Suspicious Header",
+        "ip": "172.18.0.1",
+        "header": "Referer",
+        "value": "http://localhost:8080/dashboard",
+        "timestamp": "2025-06-21 10:28:22",
+        "details": "Suspicious header detected: Referer"
+    },
+    {
+        "type": "Rate Limit Exceeded",
+        "ip": "172.18.0.1",
+        "count": 36,
+        "timestamp": "2025-06-21 10:28:22",
+        "details": "Too many requests from this IP in a short time."
+    },
+    {
+        "type": "Suspicious Header",
+        "ip": "172.18.0.1",
+        "header": "Referer",
+        "value": "http://localhost:8080/dashboard",
+        "timestamp": "2025-06-21 10:28:22",
+        "details": "Suspicious header detected: Referer"
+    },
+    {
+        "type": "Suspicious Header",
+        "ip": "127.0.0.1",
+        "header": "Referer",
+        "value": "http://127.0.0.1:5000/",
+        "timestamp": "2025-06-21 10:28:37",
+        "details": "Suspicious header detected: Referer"
+    },
+    {
+        "type": "Suspicious Header",
+        "ip": "127.0.0.1",
+        "header": "Referer",
+        "value": "http://127.0.0.1:5000/",
+        "timestamp": "2025-06-21 10:28:37",
+        "details": "Suspicious header detected: Referer"
+    },
+    {
+        "type": "Suspicious Header",
+        "ip": "127.0.0.1",
+        "header": "Referer",
+        "value": "http://127.0.0.1:5000/dashboard",
+        "timestamp": "2025-06-21 10:28:37",
+        "details": "Suspicious header detected: Referer"
+    },
+    {
+        "type": "Suspicious Header",
+        "ip": "127.0.0.1",
+        "header": "Referer",
+        "value": "http://127.0.0.1:5000/dashboard",
+        "timestamp": "2025-06-21 10:28:37",
+        "details": "Suspicious header detected: Referer"
+    },
+    {
+        "type": "Suspicious Header",
+        "ip": "127.0.0.1",
+        "header": "Referer",
+        "value": "http://127.0.0.1:5000/dashboard",
+        "timestamp": "2025-06-21 10:28:42",
+        "details": "Suspicious header detected: Referer"
+    },
+    {
+        "type": "Suspicious Header",
+        "ip": "127.0.0.1",
+        "header": "Referer",
+        "value": "http://127.0.0.1:5000/dashboard",
+        "timestamp": "2025-06-21 10:28:47",
+        "details": "Suspicious header detected: Referer"
+    },
+    {
+        "type": "Suspicious Header",
+        "ip": "127.0.0.1",
+        "header": "Referer",
+        "value": "http://127.0.0.1:5000/dashboard",
+        "timestamp": "2025-06-21 10:28:52",
+        "details": "Suspicious header detected: Referer"
+    },
+    {
+        "type": "Suspicious Header",
+        "ip": "127.0.0.1",
+        "header": "Referer",
+        "value": "http://127.0.0.1:5000/dashboard",
+        "timestamp": "2025-06-21 10:28:57",
+        "details": "Suspicious header detected: Referer"
+    },
+    {
+        "type": "Suspicious Header",
+        "ip": "127.0.0.1",
+        "header": "Referer",
+        "value": "http://127.0.0.1:5000/dashboard",
+        "timestamp": "2025-06-21 10:29:02",
+        "details": "Suspicious header detected: Referer"
+    },
+    {
+        "type": "Suspicious Header",
+        "ip": "127.0.0.1",
+        "header": "Referer",
+        "value": "http://127.0.0.1:5000/dashboard",
+        "timestamp": "2025-06-21 10:29:07",
+        "details": "Suspicious header detected: Referer"
+    },
+    {
+        "type": "Rate Limit Exceeded",
+        "ip": "127.0.0.1",
+        "count": 21,
+        "timestamp": "2025-06-21 10:29:12",
+        "details": "Too many requests from this IP in a short time."
+    },
+    {
+        "type": "Suspicious Header",
+        "ip": "127.0.0.1",
+        "header": "Referer",
+        "value": "http://127.0.0.1:5000/dashboard",
+        "timestamp": "2025-06-21 10:29:12",
+        "details": "Suspicious header detected: Referer"
+    },
+    {
+        "type": "Suspicious Header",
+        "ip": "127.0.0.1",
+        "header": "Referer",
+        "value": "http://127.0.0.1:5000/dashboard",
+        "timestamp": "2025-06-21 10:29:12",
+        "details": "Suspicious header detected: Referer"
+    },
+    {
+        "type": "Rate Limit Exceeded",
+        "ip": "127.0.0.1",
+        "count": 23,
+        "timestamp": "2025-06-21 10:29:17",
+        "details": "Too many requests from this IP in a short time."
+    },
+    {
+        "type": "Suspicious Header",
+        "ip": "127.0.0.1",
+        "header": "Referer",
+        "value": "http://127.0.0.1:5000/dashboard",
+        "timestamp": "2025-06-21 10:29:17",
+        "details": "Suspicious header detected: Referer"
+    }
+]

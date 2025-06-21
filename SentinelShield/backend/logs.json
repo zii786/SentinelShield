@@ -1,176 +1,1262 @@
 [
     {
-        "traffic": "1942 users online",
-        "alerts": "1 critical alerts",
-        "uptime": "99.91%",
-        "timestamp": "2025-06-19 14:03:33"
+        "traffic": "1928 users online",
+        "alerts": "4 critical alerts",
+        "uptime": "99.90%",
+        "timestamp": "2025-06-21 06:59:26"
     },
     {
-        "traffic": "1818 users online",
+        "traffic": "1520 users online",
         "alerts": "2 critical alerts",
-        "uptime": "99.91%",
-        "timestamp": "2025-06-19 14:03:36"
-    },
-    {
-        "traffic": "1949 users online",
-        "alerts": "5 critical alerts",
-        "uptime": "99.99%",
-        "timestamp": "2025-06-19 14:03:38"
-    },
-    {
-        "traffic": "1635 users online",
-        "alerts": "1 critical alerts",
-        "uptime": "99.95%",
-        "timestamp": "2025-06-19 14:03:38"
-    },
-    {
-        "traffic": "1187 users online",
-        "alerts": "1 critical alerts",
-        "uptime": "99.95%",
-        "timestamp": "2025-06-19 14:03:41"
-    },
-    {
-        "traffic": "1403 users online",
-        "alerts": "5 critical alerts",
         "uptime": "99.92%",
-        "timestamp": "2025-06-19 14:03:43"
+        "timestamp": "2025-06-21 06:59:26"
     },
     {
-        "traffic": "1612 users online",
-        "alerts": "5 critical alerts",
-        "uptime": "99.95%",
-        "timestamp": "2025-06-19 14:03:46"
-    },
-    {
-        "traffic": "1722 users online",
-        "alerts": "1 critical alerts",
-        "uptime": "99.94%",
-        "timestamp": "2025-06-19 14:03:48"
-    },
-    {
-        "traffic": "1753 users online",
+        "traffic": "1565 users online",
         "alerts": "0 critical alerts",
-        "uptime": "99.93%",
-        "timestamp": "2025-06-19 14:03:51"
+        "uptime": "99.92%",
+        "timestamp": "2025-06-21 01:29:31"
     },
     {
-        "traffic": "1325 users online",
+        "traffic": "1841 users online",
+        "alerts": "1 critical alerts",
+        "uptime": "100.00%",
+        "timestamp": "2025-06-21 06:59:31"
+    },
+    {
+        "traffic": "1727 users online",
+        "alerts": "4 critical alerts",
+        "uptime": "99.94%",
+        "timestamp": "2025-06-21 06:59:31"
+    },
+    {
+        "traffic": "1459 users online",
         "alerts": "2 critical alerts",
-        "uptime": "99.99%",
-        "timestamp": "2025-06-19 14:03:53"
+        "uptime": "100.00%",
+        "timestamp": "2025-06-21 01:29:36"
     },
     {
-        "traffic": "1603 users online",
+        "traffic": "1775 users online",
+        "alerts": "4 critical alerts",
+        "uptime": "99.91%",
+        "timestamp": "2025-06-21 06:59:36"
+    },
+    {
+        "traffic": "1159 users online",
+        "alerts": "0 critical alerts",
+        "uptime": "99.95%",
+        "timestamp": "2025-06-21 06:59:37"
+    },
+    {
+        "traffic": "1605 users online",
+        "alerts": "0 critical alerts",
+        "uptime": "99.95%",
+        "timestamp": "2025-06-21 01:29:41"
+    },
+    {
+        "traffic": "1748 users online",
         "alerts": "0 critical alerts",
         "uptime": "99.96%",
-        "timestamp": "2025-06-19 14:03:56"
+        "timestamp": "2025-06-21 06:59:41"
     },
     {
-        "traffic": "1476 users online",
+        "traffic": "1668 users online",
+        "alerts": "4 critical alerts",
+        "uptime": "99.98%",
+        "timestamp": "2025-06-21 06:59:42"
+    },
+    {
+        "traffic": "1805 users online",
+        "alerts": "5 critical alerts",
+        "uptime": "99.91%",
+        "timestamp": "2025-06-21 01:29:46"
+    },
+    {
+        "traffic": "1148 users online",
+        "alerts": "0 critical alerts",
+        "uptime": "99.91%",
+        "timestamp": "2025-06-21 06:59:46"
+    },
+    {
+        "traffic": "1863 users online",
         "alerts": "3 critical alerts",
+        "uptime": "99.99%",
+        "timestamp": "2025-06-21 06:59:47"
+    },
+    {
+        "traffic": "1116 users online",
+        "alerts": "4 critical alerts",
+        "uptime": "100.00%",
+        "timestamp": "2025-06-21 01:29:51"
+    },
+    {
+        "traffic": "1363 users online",
+        "alerts": "1 critical alerts",
+        "uptime": "99.92%",
+        "timestamp": "2025-06-21 01:29:56"
+    },
+    {
+        "traffic": "1515 users online",
+        "alerts": "2 critical alerts",
+        "uptime": "99.94%",
+        "timestamp": "2025-06-21 07:35:39"
+    },
+    {
+        "traffic": "1460 users online",
+        "alerts": "3 critical alerts",
+        "uptime": "99.95%",
+        "timestamp": "2025-06-21 07:35:39"
+    },
+    {
+        "traffic": "1533 users online",
+        "alerts": "4 critical alerts",
+        "uptime": "99.96%",
+        "timestamp": "2025-06-21 07:35:44"
+    },
+    {
+        "traffic": "1790 users online",
+        "alerts": "2 critical alerts",
         "uptime": "99.97%",
-        "timestamp": "2025-06-19 14:03:58"
+        "timestamp": "2025-06-21 07:35:44"
+    },
+    {
+        "traffic": "1527 users online",
+        "alerts": "4 critical alerts",
+        "uptime": "99.96%",
+        "timestamp": "2025-06-21 07:35:49"
+    },
+    {
+        "traffic": "1997 users online",
+        "alerts": "1 critical alerts",
+        "uptime": "99.92%",
+        "timestamp": "2025-06-21 07:35:49"
     },
     {
         "traffic": "1868 users online",
         "alerts": "0 critical alerts",
-        "uptime": "99.93%",
-        "timestamp": "2025-06-19 14:04:01"
-    },
-    {
-        "traffic": "1077 users online",
-        "alerts": "4 critical alerts",
         "uptime": "99.98%",
-        "timestamp": "2025-06-19 14:04:03"
+        "timestamp": "2025-06-21 07:35:54"
     },
     {
-        "traffic": "1539 users online",
-        "alerts": "2 critical alerts",
-        "uptime": "99.93%",
-        "timestamp": "2025-06-19 14:04:06"
-    },
-    {
-        "traffic": "1807 users online",
+        "traffic": "1294 users online",
         "alerts": "4 critical alerts",
-        "uptime": "99.96%",
-        "timestamp": "2025-06-19 14:04:06"
+        "uptime": "99.97%",
+        "timestamp": "2025-06-21 07:35:54"
     },
     {
-        "traffic": "1843 users online",
+        "traffic": "1243 users online",
         "alerts": "2 critical alerts",
         "uptime": "99.90%",
-        "timestamp": "2025-06-19 14:04:08"
+        "timestamp": "2025-06-21 07:35:59"
+    },
+    {
+        "traffic": "1543 users online",
+        "alerts": "2 critical alerts",
+        "uptime": "99.95%",
+        "timestamp": "2025-06-21 07:35:59"
+    },
+    {
+        "traffic": "1075 users online",
+        "alerts": "1 critical alerts",
+        "uptime": "99.96%",
+        "timestamp": "2025-06-21 07:36:04"
+    },
+    {
+        "traffic": "1116 users online",
+        "alerts": "2 critical alerts",
+        "uptime": "99.91%",
+        "timestamp": "2025-06-21 07:36:04"
+    },
+    {
+        "traffic": "1333 users online",
+        "alerts": "2 critical alerts",
+        "uptime": "99.96%",
+        "timestamp": "2025-06-21 07:36:09"
+    },
+    {
+        "traffic": "1145 users online",
+        "alerts": "0 critical alerts",
+        "uptime": "99.93%",
+        "timestamp": "2025-06-21 07:36:09"
+    },
+    {
+        "traffic": "1112 users online",
+        "alerts": "1 critical alerts",
+        "uptime": "100.00%",
+        "timestamp": "2025-06-21 07:36:14"
+    },
+    {
+        "traffic": "1549 users online",
+        "alerts": "5 critical alerts",
+        "uptime": "99.92%",
+        "timestamp": "2025-06-21 07:36:14"
+    },
+    {
+        "traffic": "1059 users online",
+        "alerts": "3 critical alerts",
+        "uptime": "99.90%",
+        "timestamp": "2025-06-21 07:36:19"
+    },
+    {
+        "traffic": "1489 users online",
+        "alerts": "2 critical alerts",
+        "uptime": "99.94%",
+        "timestamp": "2025-06-21 07:36:19"
+    },
+    {
+        "traffic": "1797 users online",
+        "alerts": "3 critical alerts",
+        "uptime": "99.98%",
+        "timestamp": "2025-06-21 07:36:24"
+    },
+    {
+        "traffic": "1891 users online",
+        "alerts": "0 critical alerts",
+        "uptime": "99.91%",
+        "timestamp": "2025-06-21 07:36:24"
+    },
+    {
+        "traffic": "1017 users online",
+        "alerts": "1 critical alerts",
+        "uptime": "99.93%",
+        "timestamp": "2025-06-21 07:36:29"
+    },
+    {
+        "traffic": "1007 users online",
+        "alerts": "0 critical alerts",
+        "uptime": "99.98%",
+        "timestamp": "2025-06-21 07:36:29"
+    },
+    {
+        "traffic": "1604 users online",
+        "alerts": "2 critical alerts",
+        "uptime": "99.96%",
+        "timestamp": "2025-06-21 07:36:34"
+    },
+    {
+        "traffic": "1601 users online",
+        "alerts": "5 critical alerts",
+        "uptime": "99.92%",
+        "timestamp": "2025-06-21 07:36:34"
+    },
+    {
+        "traffic": "1951 users online",
+        "alerts": "1 critical alerts",
+        "uptime": "99.94%",
+        "timestamp": "2025-06-21 07:36:39"
+    },
+    {
+        "traffic": "1295 users online",
+        "alerts": "3 critical alerts",
+        "uptime": "99.96%",
+        "timestamp": "2025-06-21 07:36:39"
+    },
+    {
+        "traffic": "1750 users online",
+        "alerts": "0 critical alerts",
+        "uptime": "99.91%",
+        "timestamp": "2025-06-21 07:36:44"
+    },
+    {
+        "traffic": "1961 users online",
+        "alerts": "1 critical alerts",
+        "uptime": "99.95%",
+        "timestamp": "2025-06-21 07:36:44"
+    },
+    {
+        "traffic": "1772 users online",
+        "alerts": "4 critical alerts",
+        "uptime": "99.96%",
+        "timestamp": "2025-06-21 07:36:49"
+    },
+    {
+        "traffic": "1003 users online",
+        "alerts": "5 critical alerts",
+        "uptime": "100.00%",
+        "timestamp": "2025-06-21 07:36:49"
+    },
+    {
+        "traffic": "1603 users online",
+        "alerts": "3 critical alerts",
+        "uptime": "99.92%",
+        "timestamp": "2025-06-21 07:38:37"
+    },
+    {
+        "traffic": "1114 users online",
+        "alerts": "2 critical alerts",
+        "uptime": "99.90%",
+        "timestamp": "2025-06-21 07:38:37"
+    },
+    {
+        "traffic": "1084 users online",
+        "alerts": "5 critical alerts",
+        "uptime": "99.91%",
+        "timestamp": "2025-06-21 07:38:42"
+    },
+    {
+        "traffic": "1139 users online",
+        "alerts": "0 critical alerts",
+        "uptime": "99.99%",
+        "timestamp": "2025-06-21 07:38:42"
+    },
+    {
+        "traffic": "1892 users online",
+        "alerts": "5 critical alerts",
+        "uptime": "99.95%",
+        "timestamp": "2025-06-21 07:38:47"
+    },
+    {
+        "traffic": "1883 users online",
+        "alerts": "4 critical alerts",
+        "uptime": "99.90%",
+        "timestamp": "2025-06-21 07:38:47"
+    },
+    {
+        "traffic": "1581 users online",
+        "alerts": "1 critical alerts",
+        "uptime": "99.91%",
+        "timestamp": "2025-06-21 07:38:52"
+    },
+    {
+        "traffic": "1271 users online",
+        "alerts": "3 critical alerts",
+        "uptime": "99.99%",
+        "timestamp": "2025-06-21 07:38:52"
+    },
+    {
+        "traffic": "1605 users online",
+        "alerts": "3 critical alerts",
+        "uptime": "99.93%",
+        "timestamp": "2025-06-21 07:38:57"
+    },
+    {
+        "traffic": "1923 users online",
+        "alerts": "4 critical alerts",
+        "uptime": "99.92%",
+        "timestamp": "2025-06-21 07:38:57"
+    },
+    {
+        "traffic": "1623 users online",
+        "alerts": "4 critical alerts",
+        "uptime": "99.97%",
+        "timestamp": "2025-06-21 07:39:02"
+    },
+    {
+        "traffic": "1764 users online",
+        "alerts": "3 critical alerts",
+        "uptime": "99.93%",
+        "timestamp": "2025-06-21 07:39:02"
+    },
+    {
+        "traffic": "1062 users online",
+        "alerts": "2 critical alerts",
+        "uptime": "99.93%",
+        "timestamp": "2025-06-21 07:39:07"
+    },
+    {
+        "traffic": "1371 users online",
+        "alerts": "3 critical alerts",
+        "uptime": "99.91%",
+        "timestamp": "2025-06-21 07:39:07"
+    },
+    {
+        "traffic": "1357 users online",
+        "alerts": "4 critical alerts",
+        "uptime": "99.99%",
+        "timestamp": "2025-06-21 07:39:12"
+    },
+    {
+        "traffic": "1358 users online",
+        "alerts": "0 critical alerts",
+        "uptime": "99.91%",
+        "timestamp": "2025-06-21 07:39:12"
+    },
+    {
+        "traffic": "1554 users online",
+        "alerts": "3 critical alerts",
+        "uptime": "100.00%",
+        "timestamp": "2025-06-21 07:39:17"
+    },
+    {
+        "traffic": "1442 users online",
+        "alerts": "3 critical alerts",
+        "uptime": "99.96%",
+        "timestamp": "2025-06-21 07:39:17"
+    },
+    {
+        "traffic": "1887 users online",
+        "alerts": "5 critical alerts",
+        "uptime": "99.99%",
+        "timestamp": "2025-06-21 07:39:22"
+    },
+    {
+        "traffic": "1063 users online",
+        "alerts": "3 critical alerts",
+        "uptime": "99.94%",
+        "timestamp": "2025-06-21 07:39:22"
+    },
+    {
+        "traffic": "1324 users online",
+        "alerts": "3 critical alerts",
+        "uptime": "99.97%",
+        "timestamp": "2025-06-21 07:39:27"
+    },
+    {
+        "traffic": "1181 users online",
+        "alerts": "3 critical alerts",
+        "uptime": "100.00%",
+        "timestamp": "2025-06-21 07:39:27"
+    },
+    {
+        "traffic": "1266 users online",
+        "alerts": "2 critical alerts",
+        "uptime": "99.91%",
+        "timestamp": "2025-06-21 07:39:32"
+    },
+    {
+        "traffic": "1658 users online",
+        "alerts": "4 critical alerts",
+        "uptime": "99.97%",
+        "timestamp": "2025-06-21 07:39:32"
+    },
+    {
+        "traffic": "1317 users online",
+        "alerts": "0 critical alerts",
+        "uptime": "99.92%",
+        "timestamp": "2025-06-21 07:39:37"
+    },
+    {
+        "traffic": "1976 users online",
+        "alerts": "1 critical alerts",
+        "uptime": "99.96%",
+        "timestamp": "2025-06-21 07:39:37"
+    },
+    {
+        "traffic": "1897 users online",
+        "alerts": "4 critical alerts",
+        "uptime": "99.92%",
+        "timestamp": "2025-06-21 07:39:42"
+    },
+    {
+        "traffic": "1147 users online",
+        "alerts": "0 critical alerts",
+        "uptime": "99.96%",
+        "timestamp": "2025-06-21 07:39:42"
+    },
+    {
+        "traffic": "1744 users online",
+        "alerts": "5 critical alerts",
+        "uptime": "99.95%",
+        "timestamp": "2025-06-21 07:39:47"
+    },
+    {
+        "traffic": "1497 users online",
+        "alerts": "3 critical alerts",
+        "uptime": "99.95%",
+        "timestamp": "2025-06-21 07:39:48"
+    },
+    {
+        "traffic": "1016 users online",
+        "alerts": "1 critical alerts",
+        "uptime": "99.98%",
+        "timestamp": "2025-06-21 07:39:52"
+    },
+    {
+        "traffic": "1899 users online",
+        "alerts": "0 critical alerts",
+        "uptime": "99.90%",
+        "timestamp": "2025-06-21 07:39:53"
+    },
+    {
+        "traffic": "1083 users online",
+        "alerts": "0 critical alerts",
+        "uptime": "99.90%",
+        "timestamp": "2025-06-21 07:39:57"
+    },
+    {
+        "traffic": "1673 users online",
+        "alerts": "0 critical alerts",
+        "uptime": "99.92%",
+        "timestamp": "2025-06-21 07:39:58"
+    },
+    {
+        "traffic": "1502 users online",
+        "alerts": "2 critical alerts",
+        "uptime": "99.96%",
+        "timestamp": "2025-06-21 07:40:02"
+    },
+    {
+        "traffic": "1395 users online",
+        "alerts": "5 critical alerts",
+        "uptime": "99.96%",
+        "timestamp": "2025-06-21 07:40:03"
+    },
+    {
+        "traffic": "1027 users online",
+        "alerts": "5 critical alerts",
+        "uptime": "99.92%",
+        "timestamp": "2025-06-21 07:40:07"
+    },
+    {
+        "traffic": "1474 users online",
+        "alerts": "1 critical alerts",
+        "uptime": "99.95%",
+        "timestamp": "2025-06-21 07:40:08"
+    },
+    {
+        "traffic": "1684 users online",
+        "alerts": "4 critical alerts",
+        "uptime": "99.97%",
+        "timestamp": "2025-06-21 07:40:12"
+    },
+    {
+        "traffic": "1109 users online",
+        "alerts": "0 critical alerts",
+        "uptime": "99.97%",
+        "timestamp": "2025-06-21 07:40:13"
+    },
+    {
+        "traffic": "1990 users online",
+        "alerts": "4 critical alerts",
+        "uptime": "99.98%",
+        "timestamp": "2025-06-21 07:40:17"
+    },
+    {
+        "traffic": "1708 users online",
+        "alerts": "1 critical alerts",
+        "uptime": "99.90%",
+        "timestamp": "2025-06-21 07:40:18"
+    },
+    {
+        "traffic": "1521 users online",
+        "alerts": "0 critical alerts",
+        "uptime": "99.98%",
+        "timestamp": "2025-06-21 07:40:22"
+    },
+    {
+        "traffic": "1927 users online",
+        "alerts": "5 critical alerts",
+        "uptime": "100.00%",
+        "timestamp": "2025-06-21 07:40:23"
+    },
+    {
+        "traffic": "1009 users online",
+        "alerts": "4 critical alerts",
+        "uptime": "99.95%",
+        "timestamp": "2025-06-21 07:40:27"
+    },
+    {
+        "traffic": "1090 users online",
+        "alerts": "2 critical alerts",
+        "uptime": "99.96%",
+        "timestamp": "2025-06-21 07:40:28"
+    },
+    {
+        "traffic": "1719 users online",
+        "alerts": "3 critical alerts",
+        "uptime": "99.99%",
+        "timestamp": "2025-06-21 07:40:32"
+    },
+    {
+        "traffic": "1583 users online",
+        "alerts": "4 critical alerts",
+        "uptime": "99.94%",
+        "timestamp": "2025-06-21 07:40:33"
+    },
+    {
+        "traffic": "1036 users online",
+        "alerts": "2 critical alerts",
+        "uptime": "99.96%",
+        "timestamp": "2025-06-21 07:40:37"
+    },
+    {
+        "traffic": "1092 users online",
+        "alerts": "0 critical alerts",
+        "uptime": "99.91%",
+        "timestamp": "2025-06-21 07:40:38"
+    },
+    {
+        "traffic": "1277 users online",
+        "alerts": "5 critical alerts",
+        "uptime": "99.91%",
+        "timestamp": "2025-06-21 07:40:42"
+    },
+    {
+        "traffic": "1633 users online",
+        "alerts": "0 critical alerts",
+        "uptime": "99.99%",
+        "timestamp": "2025-06-21 07:40:43"
+    },
+    {
+        "traffic": "1980 users online",
+        "alerts": "2 critical alerts",
+        "uptime": "99.90%",
+        "timestamp": "2025-06-21 07:40:47"
+    },
+    {
+        "traffic": "1106 users online",
+        "alerts": "1 critical alerts",
+        "uptime": "99.94%",
+        "timestamp": "2025-06-21 07:40:48"
+    },
+    {
+        "traffic": "1624 users online",
+        "alerts": "1 critical alerts",
+        "uptime": "99.91%",
+        "timestamp": "2025-06-21 07:40:52"
+    },
+    {
+        "traffic": "1018 users online",
+        "alerts": "1 critical alerts",
+        "uptime": "99.91%",
+        "timestamp": "2025-06-21 07:40:53"
+    },
+    {
+        "traffic": "1752 users online",
+        "alerts": "3 critical alerts",
+        "uptime": "99.95%",
+        "timestamp": "2025-06-21 07:40:57"
+    },
+    {
+        "traffic": "1961 users online",
+        "alerts": "4 critical alerts",
+        "uptime": "99.96%",
+        "timestamp": "2025-06-21 07:40:58"
+    },
+    {
+        "traffic": "1480 users online",
+        "alerts": "1 critical alerts",
+        "uptime": "99.98%",
+        "timestamp": "2025-06-21 07:41:02"
+    },
+    {
+        "traffic": "1549 users online",
+        "alerts": "5 critical alerts",
+        "uptime": "99.93%",
+        "timestamp": "2025-06-21 07:41:03"
+    },
+    {
+        "traffic": "1718 users online",
+        "alerts": "1 critical alerts",
+        "uptime": "99.94%",
+        "timestamp": "2025-06-21 07:41:07"
+    },
+    {
+        "traffic": "1953 users online",
+        "alerts": "2 critical alerts",
+        "uptime": "99.96%",
+        "timestamp": "2025-06-21 07:41:08"
+    },
+    {
+        "traffic": "1848 users online",
+        "alerts": "0 critical alerts",
+        "uptime": "99.96%",
+        "timestamp": "2025-06-21 07:41:12"
     },
     {
         "traffic": "1401 users online",
         "alerts": "2 critical alerts",
-        "uptime": "99.97%",
-        "timestamp": "2025-06-19 14:04:11"
-    },
-    {
-        "traffic": "1933 users online",
-        "alerts": "1 critical alerts",
-        "uptime": "100.00%",
-        "timestamp": "2025-06-19 14:04:13"
-    },
-    {
-        "traffic": "1856 users online",
-        "alerts": "2 critical alerts",
-        "uptime": "99.97%",
-        "timestamp": "2025-06-19 14:04:16"
-    },
-    {
-        "traffic": "1779 users online",
-        "alerts": "5 critical alerts",
-        "uptime": "99.93%",
-        "timestamp": "2025-06-19 14:04:18"
-    },
-    {
-        "traffic": "1168 users online",
-        "alerts": "3 critical alerts",
         "uptime": "99.99%",
-        "timestamp": "2025-06-19 14:04:18"
+        "timestamp": "2025-06-21 07:41:13"
     },
     {
-        "traffic": "1090 users online",
+        "traffic": "1313 users online",
         "alerts": "1 critical alerts",
-        "uptime": "99.94%",
-        "timestamp": "2025-06-19 14:04:21"
+        "uptime": "99.92%",
+        "timestamp": "2025-06-21 07:41:17"
     },
     {
-        "traffic": "1496 users online",
-        "alerts": "3 critical alerts",
-        "uptime": "99.97%",
-        "timestamp": "2025-06-19 14:04:23"
+        "traffic": "1875 users online",
+        "alerts": "0 critical alerts",
+        "uptime": "99.90%",
+        "timestamp": "2025-06-21 07:41:18"
     },
     {
-        "traffic": "1651 users online",
+        "traffic": "1977 users online",
         "alerts": "2 critical alerts",
-        "uptime": "100.00%",
-        "timestamp": "2025-06-19 14:04:26"
+        "uptime": "99.97%",
+        "timestamp": "2025-06-21 07:41:22"
     },
     {
-        "traffic": "1871 users online",
+        "traffic": "1904 users online",
         "alerts": "4 critical alerts",
         "uptime": "99.99%",
-        "timestamp": "2025-06-19 14:04:28"
+        "timestamp": "2025-06-21 07:41:23"
+    },
+    {
+        "traffic": "1960 users online",
+        "alerts": "1 critical alerts",
+        "uptime": "99.90%",
+        "timestamp": "2025-06-21 07:41:27"
+    },
+    {
+        "traffic": "1538 users online",
+        "alerts": "1 critical alerts",
+        "uptime": "99.93%",
+        "timestamp": "2025-06-21 07:41:28"
+    },
+    {
+        "traffic": "1568 users online",
+        "alerts": "5 critical alerts",
+        "uptime": "99.95%",
+        "timestamp": "2025-06-21 07:41:32"
+    },
+    {
+        "traffic": "1747 users online",
+        "alerts": "2 critical alerts",
+        "uptime": "99.95%",
+        "timestamp": "2025-06-21 07:41:33"
+    },
+    {
+        "traffic": "1673 users online",
+        "alerts": "1 critical alerts",
+        "uptime": "99.95%",
+        "timestamp": "2025-06-21 07:41:37"
+    },
+    {
+        "traffic": "1188 users online",
+        "alerts": "5 critical alerts",
+        "uptime": "99.98%",
+        "timestamp": "2025-06-21 07:41:38"
+    },
+    {
+        "traffic": "1030 users online",
+        "alerts": "5 critical alerts",
+        "uptime": "99.98%",
+        "timestamp": "2025-06-21 07:41:42"
+    },
+    {
+        "traffic": "1163 users online",
+        "alerts": "4 critical alerts",
+        "uptime": "99.98%",
+        "timestamp": "2025-06-21 07:41:43"
+    },
+    {
+        "traffic": "1975 users online",
+        "alerts": "5 critical alerts",
+        "uptime": "99.96%",
+        "timestamp": "2025-06-21 07:41:47"
+    },
+    {
+        "traffic": "1917 users online",
+        "alerts": "1 critical alerts",
+        "uptime": "100.00%",
+        "timestamp": "2025-06-21 07:41:48"
+    },
+    {
+        "traffic": "1187 users online",
+        "alerts": "3 critical alerts",
+        "uptime": "99.96%",
+        "timestamp": "2025-06-21 07:41:52"
+    },
+    {
+        "traffic": "1255 users online",
+        "alerts": "0 critical alerts",
+        "uptime": "99.92%",
+        "timestamp": "2025-06-21 07:41:53"
+    },
+    {
+        "traffic": "1443 users online",
+        "alerts": "2 critical alerts",
+        "uptime": "99.91%",
+        "timestamp": "2025-06-21 07:41:57"
+    },
+    {
+        "traffic": "1245 users online",
+        "alerts": "5 critical alerts",
+        "uptime": "99.93%",
+        "timestamp": "2025-06-21 07:41:58"
+    },
+    {
+        "traffic": "1049 users online",
+        "alerts": "2 critical alerts",
+        "uptime": "99.97%",
+        "timestamp": "2025-06-21 10:24:19"
+    },
+    {
+        "traffic": "1655 users online",
+        "alerts": "4 critical alerts",
+        "uptime": "99.94%",
+        "timestamp": "2025-06-21 10:24:21"
+    },
+    {
+        "traffic": "1270 users online",
+        "alerts": "0 critical alerts",
+        "uptime": "99.90%",
+        "timestamp": "2025-06-21 10:24:25"
+    },
+    {
+        "traffic": "1085 users online",
+        "alerts": "2 critical alerts",
+        "uptime": "99.98%",
+        "timestamp": "2025-06-21 10:24:26"
+    },
+    {
+        "traffic": "1911 users online",
+        "alerts": "1 critical alerts",
+        "uptime": "99.91%",
+        "timestamp": "2025-06-21 10:24:30"
+    },
+    {
+        "traffic": "1998 users online",
+        "alerts": "3 critical alerts",
+        "uptime": "99.95%",
+        "timestamp": "2025-06-21 10:24:31"
+    },
+    {
+        "traffic": "1285 users online",
+        "alerts": "1 critical alerts",
+        "uptime": "99.96%",
+        "timestamp": "2025-06-21 10:24:35"
+    },
+    {
+        "traffic": "1250 users online",
+        "alerts": "3 critical alerts",
+        "uptime": "99.99%",
+        "timestamp": "2025-06-21 10:24:36"
+    },
+    {
+        "traffic": "1503 users online",
+        "alerts": "4 critical alerts",
+        "uptime": "99.92%",
+        "timestamp": "2025-06-21 10:24:40"
+    },
+    {
+        "traffic": "1155 users online",
+        "alerts": "4 critical alerts",
+        "uptime": "99.90%",
+        "timestamp": "2025-06-21 10:24:41"
+    },
+    {
+        "traffic": "1648 users online",
+        "alerts": "0 critical alerts",
+        "uptime": "99.93%",
+        "timestamp": "2025-06-21 10:24:45"
+    },
+    {
+        "traffic": "1435 users online",
+        "alerts": "4 critical alerts",
+        "uptime": "99.97%",
+        "timestamp": "2025-06-21 10:24:47"
+    },
+    {
+        "traffic": "1199 users online",
+        "alerts": "4 critical alerts",
+        "uptime": "99.90%",
+        "timestamp": "2025-06-21 10:24:50"
+    },
+    {
+        "traffic": "1414 users online",
+        "alerts": "3 critical alerts",
+        "uptime": "99.93%",
+        "timestamp": "2025-06-21 10:24:52"
+    },
+    {
+        "traffic": "1482 users online",
+        "alerts": "2 critical alerts",
+        "uptime": "99.90%",
+        "timestamp": "2025-06-21 10:24:55"
+    },
+    {
+        "traffic": "1750 users online",
+        "alerts": "4 critical alerts",
+        "uptime": "99.96%",
+        "timestamp": "2025-06-21 10:24:57"
+    },
+    {
+        "traffic": "1826 users online",
+        "alerts": "3 critical alerts",
+        "uptime": "99.96%",
+        "timestamp": "2025-06-21 10:25:00"
+    },
+    {
+        "traffic": "1727 users online",
+        "alerts": "3 critical alerts",
+        "uptime": "99.99%",
+        "timestamp": "2025-06-21 10:25:02"
+    },
+    {
+        "traffic": "1307 users online",
+        "alerts": "4 critical alerts",
+        "uptime": "99.92%",
+        "timestamp": "2025-06-21 10:25:05"
+    },
+    {
+        "traffic": "1022 users online",
+        "alerts": "5 critical alerts",
+        "uptime": "99.91%",
+        "timestamp": "2025-06-21 10:25:07"
+    },
+    {
+        "traffic": "1012 users online",
+        "alerts": "4 critical alerts",
+        "uptime": "99.91%",
+        "timestamp": "2025-06-21 10:25:10"
+    },
+    {
+        "traffic": "1576 users online",
+        "alerts": "0 critical alerts",
+        "uptime": "99.96%",
+        "timestamp": "2025-06-21 10:25:11"
+    },
+    {
+        "traffic": "1214 users online",
+        "alerts": "0 critical alerts",
+        "uptime": "99.99%",
+        "timestamp": "2025-06-21 10:25:15"
+    },
+    {
+        "traffic": "1606 users online",
+        "alerts": "0 critical alerts",
+        "uptime": "99.98%",
+        "timestamp": "2025-06-21 10:25:16"
+    },
+    {
+        "traffic": "1912 users online",
+        "alerts": "0 critical alerts",
+        "uptime": "99.90%",
+        "timestamp": "2025-06-21 10:25:20"
+    },
+    {
+        "traffic": "1720 users online",
+        "alerts": "3 critical alerts",
+        "uptime": "99.95%",
+        "timestamp": "2025-06-21 10:25:21"
+    },
+    {
+        "traffic": "1169 users online",
+        "alerts": "1 critical alerts",
+        "uptime": "99.97%",
+        "timestamp": "2025-06-21 10:25:25"
+    },
+    {
+        "traffic": "1563 users online",
+        "alerts": "4 critical alerts",
+        "uptime": "99.94%",
+        "timestamp": "2025-06-21 10:25:26"
+    },
+    {
+        "traffic": "1730 users online",
+        "alerts": "5 critical alerts",
+        "uptime": "99.99%",
+        "timestamp": "2025-06-21 10:25:30"
+    },
+    {
+        "traffic": "1696 users online",
+        "alerts": "2 critical alerts",
+        "uptime": "99.99%",
+        "timestamp": "2025-06-21 10:25:31"
+    },
+    {
+        "traffic": "1708 users online",
+        "alerts": "2 critical alerts",
+        "uptime": "99.95%",
+        "timestamp": "2025-06-21 10:25:35"
+    },
+    {
+        "traffic": "1829 users online",
+        "alerts": "4 critical alerts",
+        "uptime": "99.90%",
+        "timestamp": "2025-06-21 10:25:37"
+    },
+    {
+        "traffic": "1259 users online",
+        "alerts": "3 critical alerts",
+        "uptime": "99.90%",
+        "timestamp": "2025-06-21 10:25:40"
+    },
+    {
+        "traffic": "1060 users online",
+        "alerts": "1 critical alerts",
+        "uptime": "99.93%",
+        "timestamp": "2025-06-21 10:25:42"
+    },
+    {
+        "traffic": "1049 users online",
+        "alerts": "1 critical alerts",
+        "uptime": "99.97%",
+        "timestamp": "2025-06-21 10:25:45"
+    },
+    {
+        "traffic": "1733 users online",
+        "alerts": "2 critical alerts",
+        "uptime": "99.92%",
+        "timestamp": "2025-06-21 10:25:47"
+    },
+    {
+        "traffic": "1477 users online",
+        "alerts": "4 critical alerts",
+        "uptime": "99.96%",
+        "timestamp": "2025-06-21 10:25:50"
+    },
+    {
+        "traffic": "1916 users online",
+        "alerts": "2 critical alerts",
+        "uptime": "100.00%",
+        "timestamp": "2025-06-21 10:25:52"
+    },
+    {
+        "traffic": "1235 users online",
+        "alerts": "2 critical alerts",
+        "uptime": "99.98%",
+        "timestamp": "2025-06-21 10:25:55"
+    },
+    {
+        "traffic": "1489 users online",
+        "alerts": "1 critical alerts",
+        "uptime": "99.91%",
+        "timestamp": "2025-06-21 10:25:57"
+    },
+    {
+        "traffic": "1001 users online",
+        "alerts": "3 critical alerts",
+        "uptime": "99.91%",
+        "timestamp": "2025-06-21 10:26:00"
+    },
+    {
+        "traffic": "1175 users online",
+        "alerts": "0 critical alerts",
+        "uptime": "99.99%",
+        "timestamp": "2025-06-21 10:26:02"
+    },
+    {
+        "traffic": "1421 users online",
+        "alerts": "0 critical alerts",
+        "uptime": "99.95%",
+        "timestamp": "2025-06-21 10:26:05"
+    },
+    {
+        "traffic": "1942 users online",
+        "alerts": "1 critical alerts",
+        "uptime": "99.96%",
+        "timestamp": "2025-06-21 10:26:07"
+    },
+    {
+        "traffic": "1039 users online",
+        "alerts": "1 critical alerts",
+        "uptime": "100.00%",
+        "timestamp": "2025-06-21 10:26:10"
+    },
+    {
+        "traffic": "1694 users online",
+        "alerts": "5 critical alerts",
+        "uptime": "99.96%",
+        "timestamp": "2025-06-21 10:26:12"
+    },
+    {
+        "traffic": "1031 users online",
+        "alerts": "2 critical alerts",
+        "uptime": "99.99%",
+        "timestamp": "2025-06-21 10:26:15"
+    },
+    {
+        "traffic": "1062 users online",
+        "alerts": "1 critical alerts",
+        "uptime": "99.98%",
+        "timestamp": "2025-06-21 10:26:17"
+    },
+    {
+        "traffic": "1808 users online",
+        "alerts": "1 critical alerts",
+        "uptime": "99.97%",
+        "timestamp": "2025-06-21 10:26:20"
+    },
+    {
+        "traffic": "1622 users online",
+        "alerts": "1 critical alerts",
+        "uptime": "99.92%",
+        "timestamp": "2025-06-21 10:26:22"
+    },
+    {
+        "traffic": "1058 users online",
+        "alerts": "4 critical alerts",
+        "uptime": "99.99%",
+        "timestamp": "2025-06-21 10:26:25"
+    },
+    {
+        "traffic": "1561 users online",
+        "alerts": "2 critical alerts",
+        "uptime": "99.91%",
+        "timestamp": "2025-06-21 10:26:27"
+    },
+    {
+        "traffic": "1868 users online",
+        "alerts": "4 critical alerts",
+        "uptime": "99.92%",
+        "timestamp": "2025-06-21 10:26:30"
+    },
+    {
+        "traffic": "1930 users online",
+        "alerts": "3 critical alerts",
+        "uptime": "99.92%",
+        "timestamp": "2025-06-21 10:26:32"
+    },
+    {
+        "traffic": "1652 users online",
+        "alerts": "1 critical alerts",
+        "uptime": "99.98%",
+        "timestamp": "2025-06-21 15:58:13"
+    },
+    {
+        "traffic": "1966 users online",
+        "alerts": "2 critical alerts",
+        "uptime": "99.99%",
+        "timestamp": "2025-06-21 15:58:13"
+    },
+    {
+        "traffic": "1224 users online",
+        "alerts": "3 critical alerts",
+        "uptime": "99.98%",
+        "timestamp": "2025-06-21 15:58:18"
+    },
+    {
+        "traffic": "1599 users online",
+        "alerts": "1 critical alerts",
+        "uptime": "99.92%",
+        "timestamp": "2025-06-21 15:58:18"
+    },
+    {
+        "traffic": "1391 users online",
+        "alerts": "4 critical alerts",
+        "uptime": "99.92%",
+        "timestamp": "2025-06-21 15:58:23"
+    },
+    {
+        "traffic": "1717 users online",
+        "alerts": "0 critical alerts",
+        "uptime": "99.97%",
+        "timestamp": "2025-06-21 15:58:23"
+    },
+    {
+        "traffic": "1227 users online",
+        "alerts": "4 critical alerts",
+        "uptime": "99.97%",
+        "timestamp": "2025-06-21 15:58:28"
+    },
+    {
+        "traffic": "1344 users online",
+        "alerts": "0 critical alerts",
+        "uptime": "99.99%",
+        "timestamp": "2025-06-21 15:58:28"
+    },
+    {
+        "traffic": "1540 users online",
+        "alerts": "5 critical alerts",
+        "uptime": "99.93%",
+        "timestamp": "2025-06-21 15:58:33"
+    },
+    {
+        "traffic": "1652 users online",
+        "alerts": "0 critical alerts",
+        "uptime": "99.95%",
+        "timestamp": "2025-06-21 15:58:33"
+    },
+    {
+        "traffic": "1810 users online",
+        "alerts": "5 critical alerts",
+        "uptime": "99.99%",
+        "timestamp": "2025-06-21 15:58:38"
+    },
+    {
+        "traffic": "1237 users online",
+        "alerts": "1 critical alerts",
+        "uptime": "99.96%",
+        "timestamp": "2025-06-21 15:58:38"
+    },
+    {
+        "traffic": "1414 users online",
+        "alerts": "0 critical alerts",
+        "uptime": "99.93%",
+        "timestamp": "2025-06-21 15:58:43"
+    },
+    {
+        "traffic": "1248 users online",
+        "alerts": "1 critical alerts",
+        "uptime": "99.95%",
+        "timestamp": "2025-06-21 15:58:43"
+    },
+    {
+        "traffic": "1973 users online",
+        "alerts": "0 critical alerts",
+        "uptime": "99.99%",
+        "timestamp": "2025-06-21 15:58:48"
+    },
+    {
+        "traffic": "1101 users online",
+        "alerts": "0 critical alerts",
+        "uptime": "99.97%",
+        "timestamp": "2025-06-21 15:58:48"
     },
     {
         "traffic": "1356 users online",
         "alerts": "5 critical alerts",
-        "uptime": "99.99%",
-        "timestamp": "2025-06-19 14:04:31"
-    },
-    {
-        "traffic": "1904 users online",
-        "alerts": "0 critical alerts",
         "uptime": "99.92%",
-        "timestamp": "2025-06-19 14:04:33"
+        "timestamp": "2025-06-21 15:58:53"
     },
     {
-        "traffic": "1384 users online",
-        "alerts": "5 critical alerts",
+        "traffic": "1255 users online",
+        "alerts": "2 critical alerts",
+        "uptime": "99.97%",
+        "timestamp": "2025-06-21 15:58:53"
+    },
+    {
+        "traffic": "1533 users online",
+        "alerts": "2 critical alerts",
+        "uptime": "99.92%",
+        "timestamp": "2025-06-21 15:58:58"
+    },
+    {
+        "traffic": "1941 users online",
+        "alerts": "2 critical alerts",
+        "uptime": "99.93%",
+        "timestamp": "2025-06-21 15:58:58"
+    },
+    {
+        "traffic": "1451 users online",
+        "alerts": "2 critical alerts",
         "uptime": "99.91%",
-        "timestamp": "2025-06-19 14:04:36"
+        "timestamp": "2025-06-21 15:59:03"
+    },
+    {
+        "traffic": "1431 users online",
+        "alerts": "1 critical alerts",
+        "uptime": "99.96%",
+        "timestamp": "2025-06-21 15:59:03"
+    },
+    {
+        "traffic": "1807 users online",
+        "alerts": "2 critical alerts",
+        "uptime": "99.92%",
+        "timestamp": "2025-06-21 15:59:08"
+    },
+    {
+        "traffic": "1456 users online",
+        "alerts": "0 critical alerts",
+        "uptime": "99.98%",
+        "timestamp": "2025-06-21 15:59:08"
+    },
+    {
+        "traffic": "1918 users online",
+        "alerts": "4 critical alerts",
+        "uptime": "99.98%",
+        "timestamp": "2025-06-21 15:59:13"
+    },
+    {
+        "traffic": "1827 users online",
+        "alerts": "5 critical alerts",
+        "uptime": "99.97%",
+        "timestamp": "2025-06-21 15:59:13"
+    },
+    {
+        "traffic": "1490 users online",
+        "alerts": "2 critical alerts",
+        "uptime": "99.92%",
+        "timestamp": "2025-06-21 15:59:18"
+    },
+    {
+        "traffic": "1889 users online",
+        "alerts": "5 critical alerts",
+        "uptime": "99.96%",
+        "timestamp": "2025-06-21 15:59:18"
     }
 ]
