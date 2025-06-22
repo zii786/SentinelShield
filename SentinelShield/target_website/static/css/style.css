@@ -1,73 +1,270 @@
-/* Core UI Enhancements */
+/* SentinelShield Target Website Styles */
+
+/* Core Styles & Typography */
 body {
-    font-family: 'Segoe UI', sans-serif;
-    background-color: #f9f9f9;
-    color: #212529;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    background-color: #f8f9fa;
+    color: #343a40;
+    line-height: 1.6;
     transition: background-color 0.3s ease, color 0.3s ease;
-  }
-  
-  .navbar-brand {
-    font-weight: bold;
-  }
-  
-  h1, h2, h3, h4 {
-    font-family: 'Segoe UI Semibold', sans-serif;
-  }
-  
-  .shadow-sm {
-    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
-  }
-  
-  .shadow-sm:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-  }
-  
-  footer {
-    font-size: 0.9rem;
-  }
-  
-  /* Form UI */
-  form input, form textarea {
-    border-radius: 8px;
-  }
-  form .btn {
-    border-radius: 20px;
-  }
-  
-  /* Dark Mode */
-  body.dark-mode {
-    background-color: #121212;
-    color: #e0e0e0;
-  }
-  
-  body.dark-mode .navbar,
-  body.dark-mode footer {
-    background-color: #1f1f1f !important;
-  }
-  
-  body.dark-mode .hero {
-    background: linear-gradient(to right, #1c1c1c, #2e2e2e);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    font-weight: 600;
+    color: #212529;
+}
+
+.btn {
+    border-radius: 50px;
+    padding: 12px 30px;
+    font-weight: 600;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.btn-warning {
+    background-color: #ffc107;
+    border-color: #ffc107;
+    color: #212529;
+}
+
+/* Navbar */
+.navbar {
+    padding: 1rem 0;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.navbar-brand {
+    font-weight: 700;
+    font-size: 1.5rem;
+}
+
+.nav-link {
+    color: #495057;
+    font-weight: 500;
+    margin: 0 0.5rem;
+}
+
+.nav-link:hover {
+    color: #007bff;
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(135deg, #007bff, #0056b3);
     color: white;
-  }
-  
-  body.dark-mode .shadow-sm {
-    background-color: #2b2b2b;
-    color: #e0e0e0;
-  }
-  
-  /* Loader Spinner */
-  .spinner-wrapper {
-    position: fixed;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
-    background-color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 9999;
-  }
-  body.dark-mode .spinner-wrapper {
+    padding: 8rem 0;
+    text-align: center;
+}
+
+.hero .display-4 {
+    font-weight: 700;
+    font-size: 3.5rem;
+}
+
+.hero .lead {
+    font-size: 1.25rem;
+    margin-bottom: 2rem;
+}
+
+/* Features & Sections */
+section {
+    padding: 5rem 0;
+}
+
+.feature-card {
+    background: #ffffff;
+    border-radius: 15px;
+    padding: 2.5rem;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin-bottom: 2rem;
+    height: 100%;
+}
+
+.feature-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+}
+
+.feature-card h5 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: #007bff;
+}
+
+/* Footer */
+footer {
+    background-color: #343a40;
+    color: #f8f9fa;
+    padding: 3rem 0;
+}
+
+/* Loader Spinner */
+.spinner-wrapper {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background-color: #f8f9fa;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  transition: opacity 0.5s ease;
+}
+
+/* Dark Mode */
+body.dark-mode {
     background-color: #121212;
-  }
-  
+    color: #e0e0e0;
+}
+
+body.dark-mode h1, body.dark-mode h2, body.dark-mode h3, body.dark-mode h4, body.dark-mode h5, body.dark-mode h6 {
+    color: #ffffff;
+}
+
+body.dark-mode .navbar {
+    background-color: #1c1c1c;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+body.dark-mode .nav-link {
+    color: #a0a0a0;
+}
+
+body.dark-mode .nav-link:hover {
+    color: #4dabf7;
+}
+
+body.dark-mode .hero {
+    background: linear-gradient(135deg, #1c1c1c, #2e2e2e);
+}
+
+body.dark-mode .feature-card {
+    background: #1c1c1c;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+}
+
+body.dark-mode .feature-card h5 {
+    color: #4dabf7;
+}
+
+body.dark-mode footer {
+    background-color: #1c1c1c;
+}
+
+body.dark-mode .spinner-wrapper {
+  background-color: #121212;
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+    .hero {
+        padding: 6rem 0;
+    }
+    .hero .display-4 {
+        font-size: 2.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero {
+        padding: 4rem 0;
+    }
+    section {
+        padding: 3rem 0;
+    }
+    .btn {
+        padding: 10px 24px;
+    }
+}
+  /* Back to Top Button */
+.back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 24px;
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+    transition: opacity 0.3s, visibility 0.3s, transform 0.3s;
+    z-index: 1000;
+}
+
+.back-to-top.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+body.dark-mode .back-to-top {
+    background-color: #4dabf7;
+    color: #121212;
+}
+
+/* Animation for elements on scroll */
+.feature-card, .use-case-card, .team-member {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+.feature-card.visible, .use-case-card.visible, .team-member.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Testimonial Section */
+.testimonial-section {
+    background-color: #e9ecef;
+}
+
+body.dark-mode .testimonial-section {
+    background-color: #232323;
+}
+
+.testimonial-card {
+    background: #ffffff;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+body.dark-mode .testimonial-card {
+    background: #1c1c1c;
+}
+
+.testimonial-card p {
+    font-style: italic;
+}
+
+.testimonial-card .author {
+    font-weight: 600;
+    margin-top: 1rem;
+}
+
+/* CTA Section */
+.cta-section {
+    background: linear-gradient(135deg, #007bff, #0056b3);
+    color: white;
+    padding: 5rem 0;
+    text-align: center;
+}
+
+body.dark-mode .cta-section {
+    background: linear-gradient(135deg, #1c1c1c, #2e2e2e);
+}

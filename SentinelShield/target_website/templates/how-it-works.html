@@ -4,6 +4,9 @@
         <meta charset="UTF-8">
         <title>How It Works - SentinelShield</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
         <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
       </head>
@@ -20,17 +23,17 @@
 <!-- Navbar (same across all pages) -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <div class="container">
-    <a class="navbar-brand" href="/">SentinelShield</a>
+    <a class="navbar-brand" href="{{ url_for('index') }}">SentinelShield</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ms-auto">
-        <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
-        <li class="nav-item"><a class="nav-link active" href="/how-it-works">How it Works</a></li>
-        <li class="nav-item"><a class="nav-link" href="/use-cases">Use Cases</a></li>
-        <li class="nav-item"><a class="nav-link" href="/team">Team</a></li>
-        <li class="nav-item"><a class="nav-link" href="/contact">Contact</a></li>
+        <li class="nav-item"><a class="nav-link" href="{{ url_for('index') }}">Home</a></li>
+        <li class="nav-item"><a class="nav-link active" href="{{ url_for('how_it_works') }}">How it Works</a></li>
+        <li class="nav-item"><a class="nav-link" href="{{ url_for('use_cases') }}">Use Cases</a></li>
+        <li class="nav-item"><a class="nav-link" href="{{ url_for('team') }}">Team</a></li>
+        <li class="nav-item"><a class="nav-link" href="{{ url_for('contact') }}">Contact</a></li>
         <li class="nav-item">
             <button class="btn btn-sm btn-warning ms-3" onclick="toggleDarkMode()">Toggle Dark Mode</button>
           </li>
@@ -52,11 +55,11 @@
 <section class="py-5">
   <div class="container">
     <div class="step">
-      <h4>1️⃣ Client Traffic Comes In</h4>
+      <h4> Client Traffic Comes In</h4>
       <p>All user requests to the public website first pass through SentinelShield's NGINX proxy server. This allows inspection and control of all incoming traffic.</p>
     </div>
     <div class="step">
-      <h4>2️⃣ Detection Layer Kicks In</h4>
+      <h4> Detection Layer Kicks In</h4>
       <p>SentinelShield uses rule-based or ML-powered logic to analyze patterns. It detects anomalies like:</p>
       <ul>
         <li>Excessive requests from one IP</li>
@@ -65,7 +68,7 @@
       </ul>
     </div>
     <div class="step">
-      <h4>3️⃣ Tracer Identifies Source</h4>
+      <h4> Tracer Identifies Source</h4>
       <p>When threats are detected, SentinelShield traces their origin using:</p>
       <ul>
         <li>IP geolocation</li>
@@ -75,7 +78,7 @@
       <p><strong>No personal user data is misused or stored.</strong></p>
     </div>
     <div class="step">
-      <h4>4️⃣ Dashboard Displays Everything</h4>
+      <h4> Dashboard Displays Everything</h4>
       <p>Admins get a live dashboard showing:</p>
       <ul>
         <li>Spikes in traffic</li>
@@ -84,7 +87,7 @@
       </ul>
     </div>
     <div class="step">
-      <h4>5️⃣ Optional Alerts Triggered</h4>
+      <h4> Optional Alerts Triggered</h4>
       <p>If severe attacks are detected, alerts are sent to designated teams via:</p>
       <ul>
         <li>Email (SMTP/SendGrid)</li>
@@ -95,9 +98,9 @@
 </section>
 
 <!-- Footer -->
-<footer class="bg-dark text-white text-center py-4">
+<footer class="bg-dark text-white py-4 text-center">
   <div class="container">
-    <p class="mb-0">&copy; 2025 SentinelShield. Cybersecurity made simple and powerful.</p>
+    <p>&copy; 2025 SentinelShield. All Rights Reserved.</p>
   </div>
 </footer>
 

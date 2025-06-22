@@ -2,8 +2,11 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <title>SentinelShield - Cyber Defense Title</title>
+        <title>SentinelShield - AI-Powered Web Security</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
         <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
       </head>
@@ -19,17 +22,17 @@
 <!-- Navbar -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <div class="container">
-    <a class="navbar-brand" href="#">SentinelShield</a>
+    <a class="navbar-brand" href="{{ url_for('index') }}">SentinelShield</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ms-auto">
-        <li class="nav-item"><a class="nav-link" href="#">How it Works</a></li>
-        <li class="nav-item"><a class="nav-link" href="#">Use Cases</a></li>
-        <li class="nav-item"><a class="nav-link" href="#">Team</a></li>
-        <li class="nav-item"><a class="nav-link" href="#">Dashboard</a></li>
-        <li class="nav-item"><a class="btn btn-warning ms-2" href="#">Sign Up</a></li>
+        <li class="nav-item"><a class="nav-link" href="{{ url_for('index') }}">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="{{ url_for('how_it_works') }}">How it Works</a></li>
+        <li class="nav-item"><a class="nav-link" href="{{ url_for('use_cases') }}">Use Cases</a></li>
+        <li class="nav-item"><a class="nav-link" href="{{ url_for('team') }}">Team</a></li>
+        <li class="nav-item"><a class="nav-link" href="{{ url_for('contact') }}">Contact</a></li>
         <li class="nav-item">
             <button class="btn btn-sm btn-warning ms-3" onclick="toggleDarkMode()">Toggle Dark Mode</button>
           </li>
@@ -44,50 +47,98 @@
   <div class="container">
     <h1 class="display-4 fw-bold">AI-Powered Protection for Public & Govt Websites</h1>
     <p class="lead">SentinelShield monitors traffic in real time and protects your site from suspicious activity and cyberattacks.</p>
-    <a href="#" class="btn btn-warning me-2">Request Demo</a>
-    <a href="#" class="btn btn-outline-light">See How It Works</a>
+    <a href="{{ url_for('contact') }}" class="btn btn-warning me-2">Request Demo</a>
+    <a href="{{ url_for('how_it_works') }}" class="btn btn-outline-light">See How It Works</a>
   </div>
 </section>
 
 <!-- Features -->
-<section class="py-5 text-center">
-  <div class="container">
-    <h2 class="mb-4">How SentinelShield Works</h2>
-    <div class="row">
-      <div class="col-md-4">
-        <h5>🔁 Reverse Proxy</h5>
-        <p>All client traffic flows through NGINX, allowing full visibility and control.</p>
-      </div>
-      <div class="col-md-4">
-        <h5>🧠 Smart Detection</h5>
-        <p>Detects too many requests, weird headers, or spikes in real time using rules or ML.</p>
-      </div>
-      <div class="col-md-4">
-        <h5>🕵️ Tracer</h5>
-        <p>Traces source of threats via IP geolocation and browser fingerprinting—privacy-safe.</p>
-      </div>
+<section class="py-5">
+    <div class="container">
+        <h2 class="text-center mb-5">How SentinelShield Works</h2>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="feature-card">
+                    <h5>Reverse Proxy</h5>
+                    <p>All client traffic flows through our robust NGINX proxy, allowing for full visibility and granular control over incoming requests.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="feature-card">
+                    <h5>Smart Detection</h5>
+                    <p>Our system uses a hybrid model of rule-based filtering and machine learning to detect suspicious patterns in real-time.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="feature-card">
+                    <h5>Threat Intelligence</h5>
+                    <p>Trace the source of threats with IP geolocation and privacy-safe browser fingerprinting to build a proactive defense strategy.</p>
+                </div>
+            </div>
+        </div>
     </div>
-  </div>
 </section>
 
 <!-- Optional Add-ons -->
 <section class="bg-light py-5">
-  <div class="container text-center">
-    <h2 class="mb-4">What More Can You Build?</h2>
-    <div class="row">
-      <div class="col-md-3"><h6>📊 Dashboard</h6><p>Real-time threat visualizations.</p></div>
-      <div class="col-md-3"><h6>📁 Logging Server</h6><p>Archive attack logs with SQLite or InfluxDB.</p></div>
-      <div class="col-md-3"><h6>📨 Alerts</h6><p>Send email/SMS via Twilio, SMTP or SendGrid.</p></div>
-      <div class="col-md-3"><h6>🔌 Plug-and-Play</h6><p>Deploy with Docker, integrate via NGINX.</p></div>
+    <div class="container">
+        <h2 class="text-center mb-5">More Than a WAF</h2>
+        <div class="row">
+            <div class="col-md-3">
+                <div class="feature-card">
+                    <h6>Dashboard</h6>
+                    <p>Real-time threat visualizations.</p>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="feature-card">
+                    <h6>Logging Server</h6>
+                    <p>Archive attack logs with SQLite or InfluxDB.</p>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="feature-card">
+                    <h6>Alerts</h6>
+                    <p>Send email/SMS via Twilio, SMTP or SendGrid.</p>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="feature-card">
+                    <h6>Plug-and-Play</h6>
+                    <p>Deploy with Docker, integrate via NGINX.</p>
+                </div>
+            </div>
+        </div>
     </div>
+</section>
+<!-- Testimonials -->
+<section class="testimonial-section py-5">
+  <div class="container">
+      <h2 class="text-center mb-5">Trusted by Leading Agencies</h2>
+      <div class="row">
+          <div class="col-md-6 mx-auto">
+              <div class="testimonial-card">
+                  <p>"SentinelShield has been a game-changer for our department's web security. The real-time monitoring and automated blocking have saved us countless hours and protected sensitive citizen data. It's robust, reliable, and surprisingly easy to manage."</p>
+                  <div class="author">- Director of IT, City of Metropolis</div>
+              </div>
+          </div>
+      </div>
   </div>
 </section>
 
-<!-- Footer -->
-<footer class="bg-dark text-white py-4 text-center">
+<!-- Call to Action -->
+<section class="cta-section">
   <div class="container">
-    <p>&copy; 2025 SentinelShield. Built for public safety and secure governance.</p>
+      <h2 class="display-5 fw-bold">Ready to Secure Your Services?</h2>
+      <p class="lead">Get a personalized demo and see how SentinelShield can protect your digital assets.</p>
+      <a href="/SentinelShield/target_website/templates/contact.html" class="btn btn-warning btn-lg mt-3">Request a Demo</a>
   </div>
+</section>
+<!-- Footer -->
+<footer class="py-4 text-center">
+    <div class="container">
+        <p>&copy; 2025 SentinelShield. Built for public safety and secure governance.</p>
+    </div>
 </footer>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>

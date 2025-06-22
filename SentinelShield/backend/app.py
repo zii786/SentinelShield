@@ -30,7 +30,10 @@ APP_STATS = {
     "unique_visitors": set(),
     "http_status_counts": defaultdict(int),
     "requests_per_minute": 0,
-    "last_updated": "Never"
+    "last_updated": "Never",
+    "requests_per_minute_history": [],  # Store last 60 seconds of request counts
+    "current_minute_requests": 0,
+    "last_minute_reset": datetime.now(timezone.utc)
 }
 
 # In-memory store for request counts (reset periodically)
@@ -105,36 +108,36 @@ def process_logs():
     )
     
     # Wait for the log file to be created by Nginx
+    print("Log processing thread started. Waiting for Nginx log file...")
     while not os.path.exists(log_file_path):
-        print("Waiting for Nginx log file to be created...")
         time.sleep(2)
+    print(f"Nginx log file found at {log_file_path}. Starting to monitor.")
 
-    with open(log_file_path, 'r') as file:
-        file.seek(0, 2)  # Go to the end of the file
-        while True:
-            new_lines = file.readlines()
-            if not new_lines:
-                time.sleep(1)  # Wait for new entries
-                continue
+    try:
+        with open(log_file_path, 'r') as file:
+            file.seek(0, 2)  # Go to the end of the file
+            while True:
+                new_lines = file.readlines()
+                if not new_lines:
+                    time.sleep(1)  # Wait for new entries
+                    continue
 
-            for line in new_lines:
-                try:
-                    match = log_pattern.match(line)
-                    if not match:
-                        continue
-                    
-                    log_entry = match.groupdict()
-                    
-                    # Update statistics
-                    APP_STATS["total_requests"] += 1
-                    APP_STATS["unique_visitors"].add(log_entry['ip'])
-                    APP_STATS["http_status_counts"][log_entry['status']] += 1
-                    APP_STATS["last_updated"] = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M:%S UTC")
-
-                    # Pass the log_entry to the detection function
-                    analyze_log_entry(log_entry)
-                except Exception as e:
-                    print(f"Error processing log line: {line.strip()}. Error: {e}")
+                for line in new_lines:
+                    try:
+                        match = log_pattern.match(line)
+                        if not match:
+                            print(f"Log line did not match pattern: {line.strip()}")
+                            continue
+                        
+                        log_entry = match.groupdict()
+                        analyze_log_entry(log_entry)
+                    except Exception as e:
+                        print(f"Error processing log line: {line.strip()}. Error: {e}")
+                        
+    except FileNotFoundError:
+        print(f"FATAL: Log file {log_file_path} was not found after initial check. Thread is stopping.")
+    except Exception as e:
+        print(f"A fatal error occurred in the log processing thread: {e}. Thread is stopping.")
 
 # Helper to log suspicious events to JSON file
 def log_suspicious_event(event):
@@ -153,6 +156,29 @@ def analyze_log_entry(log_entry):
 
     now = datetime.now(timezone.utc)
     
+    # Update real-time statistics
+    APP_STATS["total_requests"] += 1
+    APP_STATS["unique_visitors"].add(ip)
+    APP_STATS["http_status_counts"][log_entry.get('status', '0')] += 1
+    APP_STATS["last_updated"] = now.strftime('%Y-%m-%d %H:%M:%S')
+    
+    # Calculate requests per minute
+    APP_STATS["current_minute_requests"] += 1
+    
+    # Reset minute counter if a minute has passed
+    if (now - APP_STATS["last_minute_reset"]).total_seconds() >= 60:
+        APP_STATS["requests_per_minute"] = APP_STATS["current_minute_requests"]
+        APP_STATS["current_minute_requests"] = 0
+        APP_STATS["last_minute_reset"] = now
+        
+        # Keep history for the last 10 minutes
+        APP_STATS["requests_per_minute_history"].append({
+            "timestamp": now.strftime('%Y-%m-%d %H:%M:%S'),
+            "requests": APP_STATS["requests_per_minute"]
+        })
+        if len(APP_STATS["requests_per_minute_history"]) > 10:
+            APP_STATS["requests_per_minute_history"].pop(0)
+    
     # --- 1. Rate Limiting Detection ---
     ip_request_counts[ip] = [t for t in ip_request_counts[ip] if (now - t).total_seconds() < TRAFFIC_WINDOW]
     ip_request_counts[ip].append(now)
@@ -168,7 +194,7 @@ def analyze_log_entry(log_entry):
 
     # --- 2. Suspicious User-Agent Detection (Example) ---
     user_agent = log_entry.get('user_agent', '').lower()
-    suspicious_agents = ['sqlmap', 'nmap', 'nikto', 'curl']
+    suspicious_agents = ['sqlmap', 'nmap', 'nikto', 'curl', 'wget', 'python-requests']
     for agent in suspicious_agents:
         if agent in user_agent:
             event = {
@@ -181,9 +207,17 @@ def analyze_log_entry(log_entry):
             log_suspicious_event(event)
             break # Log only once per entry
 
-    # Note: Header-based detection is difficult from logs.
-    # Real-time header inspection would require a more advanced setup
-    # (e.g., integrating with ModSecurity for Nginx).
+    # --- 3. HTTP Status Code Monitoring ---
+    status = log_entry.get('status', '0')
+    if status.startswith('4') or status.startswith('5'):
+        event = {
+            'type': 'HTTP Error',
+            'ip': ip,
+            'status': status,
+            'timestamp': now.strftime('%Y-%m-%d %H:%M:%S'),
+            'details': f"HTTP {status} error detected"
+        }
+        log_suspicious_event(event)
 
 @app.route('/', methods=['GET', 'POST'])
 def login():
@@ -226,6 +260,30 @@ def logs():
         logs = []
     return render_template('logs.html', logs=logs)
 
+@app.route('/events')
+@login_required
+def events():
+    page = request.args.get('page', 1, type=int)
+    per_page = 50  # Number of events per page
+    try:
+        all_events = load_events()
+        sorted_events = sorted(all_events, key=lambda x: x.get('timestamp', ''), reverse=True)
+        
+        # Paginate the sorted events
+        start = (page - 1) * per_page
+        end = start + per_page
+        paginated_events = sorted_events[start:end]
+        
+        # Calculate total pages
+        total_pages = (len(sorted_events) + per_page - 1) // per_page
+        
+    except Exception as e:
+        print(f"Error loading events: {e}")
+        paginated_events = []
+        total_pages = 0
+
+    return render_template('events.html', events=paginated_events, page=page, total_pages=total_pages)
+
 @app.route('/history')
 @login_required
 def history():
@@ -237,13 +295,33 @@ def get_data():
     # Return a copy of the stats, converting set to a simple count for JSON
     stats_copy = APP_STATS.copy()
     stats_copy["unique_visitors"] = len(stats_copy["unique_visitors"])
+    
+    # Add current minute requests for real-time display
+    stats_copy["current_minute_requests"] = APP_STATS["current_minute_requests"]
+    
+    # Add HTTP status breakdown
+    stats_copy["http_status_breakdown"] = dict(APP_STATS["http_status_counts"])
+    
+    # Calculate average requests per minute from history
+    if APP_STATS["requests_per_minute_history"]:
+        avg_rpm = sum(item["requests"] for item in APP_STATS["requests_per_minute_history"]) / len(APP_STATS["requests_per_minute_history"])
+        stats_copy["average_requests_per_minute"] = round(avg_rpm, 2)
+    else:
+        stats_copy["average_requests_per_minute"] = 0
+    
     return jsonify(stats_copy)
 
 @app.route('/history-data')
 @login_required
 def history_data():
-    with open(LOG_FILE) as f:
-        return jsonify(json.load(f))
+    """Provides aggregated data for historical charts."""
+    # This now returns real, aggregated data instead of old log files.
+    stats = {
+        "requests_per_minute_history": APP_STATS["requests_per_minute_history"],
+        "http_status_counts": dict(APP_STATS["http_status_counts"]),
+        "unique_visitor_count": len(APP_STATS["unique_visitors"])
+    }
+    return jsonify(stats)
 
 @app.route('/recent-events')
 @login_required
@@ -251,6 +329,48 @@ def recent_events():
     events = load_events()
     recent_events = sorted(events, key=lambda x: x.get('timestamp', ''), reverse=True)[:20]
     return jsonify(recent_events)
+
+@app.route('/real-time-logs')
+@login_required
+def real_time_logs():
+    """Return real-time traffic logs for the logs page"""
+    log_file_path = '/var/log/nginx/access.log'
+    parsed_logs = []
+
+    if not os.path.exists(log_file_path):
+        return jsonify([])
+
+    try:
+        with open(log_file_path, 'r') as f:
+            lines = f.readlines()
+            # Get last 50 lines and parse them
+            recent_lines = lines[-50:]
+
+            log_pattern = re.compile(
+                r'(?P<ip>\S+) - .* \[(?P<time>.*?)\] "(?P<request>.*?)" '
+                r'(?P<status>\d{3}) (?P<size>\d+) "(?P<referer>.*?)" "(?P<user_agent>.*?)" "(?P<x_forwarded_for>.*?)"'
+            )
+
+            for line in reversed(recent_lines): # Show newest first immediately
+                match = log_pattern.match(line)
+                if match:
+                    log_entry = match.groupdict()
+                    parsed_logs.append({
+                        'timestamp': log_entry['time'],
+                        'ip': log_entry['ip'],
+                        'request': log_entry['request'],
+                        'status': log_entry['status'],
+                        'size': log_entry['size'],
+                        'user_agent': log_entry['user_agent'][:70] + '...' if len(log_entry['user_agent']) > 70 else log_entry['user_agent']
+                    })
+            
+        return jsonify(parsed_logs)
+
+    except Exception as e:
+        print(f"Error reading real-time logs: {e}")
+        # In case of any error (e.g., file lock, malformed line), return an empty list
+        # This prevents the 500 Internal Server Error.
+        return jsonify([])
 
 @app.route('/block/<ip>', methods=['POST'])
 @login_required
@@ -382,6 +502,38 @@ def send_email_alert(subject, body):
             server.sendmail(EMAIL_FROM, [EMAIL_TO], msg.as_string())
     except Exception as e:
         print(f"Failed to send alert email: {e}")
+
+@app.route('/health')
+def health_check():
+    """Health check endpoint for monitoring"""
+    try:
+        # Check if log file exists and is readable
+        log_file_path = '/var/log/nginx/access.log'
+        log_file_ok = os.path.exists(log_file_path) and os.access(log_file_path, os.R_OK)
+        
+        # Check if blacklist file is writable
+        blacklist_path = '/etc/nginx/blacklist.conf'
+        blacklist_ok = os.access(os.path.dirname(blacklist_path), os.W_OK)
+        
+        status = {
+            'status': 'healthy' if log_file_ok and blacklist_ok else 'degraded',
+            'timestamp': datetime.now(timezone.utc).isoformat(),
+            'services': {
+                'log_processing': log_file_ok,
+                'blacklist_management': blacklist_ok,
+                'total_requests': APP_STATS["total_requests"],
+                'unique_visitors': len(APP_STATS["unique_visitors"])
+            }
+        }
+        
+        return jsonify(status), 200 if status['status'] == 'healthy' else 503
+        
+    except Exception as e:
+        return jsonify({
+            'status': 'unhealthy',
+            'error': str(e),
+            'timestamp': datetime.now(timezone.utc).isoformat()
+        }), 500
 
 if __name__ == '__main__':
     threading.Thread(target=process_logs, daemon=True).start()

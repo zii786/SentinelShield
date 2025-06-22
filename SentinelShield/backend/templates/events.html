@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container-fluid" style="padding-top: 2rem;">
+    <h2 class="text-center mb-4">All Suspicious Events</h2>
+    <div class="table-container card">
+        <table>
+            <thead>
+                <tr>
+                    <th>Timestamp</th>
+                    <th>Type</th>
+                    <th>IP Address</th>
+                    <th>Details</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% if events %}
+                    {% for event in events %}
+                    <tr>
+                        <td>{{ event.timestamp }}</td>
+                        <td>
+                            <span class="badge 
+                                {% if event.type == 'Rate Limit Exceeded' %}badge-danger
+                                {% elif event.type == 'Suspicious User-Agent' %}badge-warning
+                                {% elif event.type == 'HTTP Error' %}badge-secondary
+                                {% elif event.type == 'IP Blocked' %}badge-dark
+                                {% else %}badge-info{% endif %}">
+                                {{ event.type }}
+                            </span>
+                        </td>
+                        <td>
+                            {{ event.ip }}
+                            <button class="btn btn-sm btn-outline-danger ms-2" onclick="blockIp('{{ event.ip }}')">Block</button>
+                        </td>
+                        <td>{{ event.details }}</td>
+                    </tr>
+                    {% endfor %}
+                {% else %}
+                <tr>
+                    <td colspan="4" class="text-center">No suspicious events found.</td>
+                </tr>
+                {% endif %}
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Pagination -->
+    <nav aria-label="Page navigation" class="mt-4">
+        <ul class="pagination justify-content-center">
+            <li class="page-item {% if page <= 1 %}disabled{% endif %}">
+                <a class="page-link" href="{{ url_for('events', page=page-1) }}">Previous</a>
+            </li>
+            
+            {% for p in range(1, total_pages + 1) %}
+            <li class="page-item {% if p == page %}active{% endif %}">
+                <a class="page-link" href="{{ url_for('events', page=p) }}">{{ p }}</a>
+            </li>
+            {% endfor %}
+            
+            <li class="page-item {% if page >= total_pages %}disabled{% endif %}">
+                <a class="page-link" href="{{ url_for('events', page=page+1) }}">Next</a>
+            </li>
+        </ul>
+    </nav>
+</div>
+{% endblock %} 

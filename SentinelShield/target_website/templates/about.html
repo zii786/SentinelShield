@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Demo Website</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="/" class="nav-logo">DemoCorp</a>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="/" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="/about" class="nav-link active">About</a>
+                </li>
+                <li class="nav-item">
+                    <a href="/contact" class="nav-link">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <div class="container">
+            <h1>About DemoCorp</h1>
+            <p>Welcome to DemoCorp, a demonstration website designed to showcase web application security monitoring and protection capabilities.</p>
+            
+            <div class="about-section">
+                <h2>Our Mission</h2>
+                <p>This is a test website that simulates a real business website to demonstrate how SentinelShield WAF can protect against various types of web attacks and suspicious activities.</p>
+            </div>
+
+            <div class="about-section">
+                <h2>What We Do</h2>
+                <p>This demo site serves as a target for security testing and monitoring. It's intentionally vulnerable to demonstrate the effectiveness of web application firewalls in detecting and blocking malicious traffic.</p>
+            </div>
+
+            <div class="about-section">
+                <h2>Security Notice</h2>
+                <p><strong>Important:</strong> This is a demonstration website. Any security features or vulnerabilities are intentional for educational purposes. Do not use this site for actual business operations.</p>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 DemoCorp. This is a demonstration website.</p>
+        </div>
+    </footer>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html> 

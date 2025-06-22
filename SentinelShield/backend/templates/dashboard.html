@@ -34,24 +34,38 @@
                         <th>IP Address</th>
                         <th>Timestamp</th>
                         <th>Details</th>
+                        <th>Actions</th>
                     </tr>
                 </thead>
                 <tbody id="events-tbody">
-                    {% for event in recent_events %}
-                    <tr class="{% if event.type == 'Suspicious User-Agent' %}warning-event{% endif %}">
-                        <td>{{ loop.index }}</td>
-                        <td>{{ event.type }}</td>
-                        <td>{{ event.ip | default('-') }}</td>
-                        <td>{{ event.timestamp }}</td>
-                        <td>{{ event.details }}</td>
-                    </tr>
-                    {% else %}
-                    <tr>
-                        <td colspan="5">No suspicious events recorded yet.</td>
-                    </tr>
-                    {% endfor %}
+                    <!-- Data will be loaded by JavaScript -->
                 </tbody>
             </table>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-header d-flex justify-content-between align-items-center">
+                <h5 class="mb-0">Recent Suspicious Events</h5>
+                <a href="{{ url_for('events') }}" class="btn btn-primary">View All Events</a>
+            </div>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Timestamp</th>
+                            <th>Type</th>
+                            <th>IP Address</th>
+                            <th>Details</th>
+                        </tr>
+                    </thead>
+                    <tbody id="recent-events-tbody">
+                        <!-- Data will be loaded by JavaScript -->
+                    </tbody>
+                </table>
+            </div>
         </div>
     </div>
 </div>
@@ -62,7 +76,7 @@
             .then(data => {
                 document.getElementById('total_requests').innerText = "Total Requests: " + data.total_requests;
                 document.getElementById('unique_visitors').innerText = "Unique Visitors: " + data.unique_visitors;
-                document.getElementById('requests_per_minute').innerText = "Requests/Min: " + data.requests_per_minute;
+                document.getElementById('requests_per_minute').innerText = "Avg. Requests/Min: " + data.average_requests_per_minute;
                 document.getElementById('last_updated').innerText = "Last Updated: " + data.last_updated;
             });
     }
@@ -74,7 +88,7 @@
         const tbody = document.getElementById('events-tbody');
         tbody.innerHTML = '';
         if (events.length === 0) {
-            tbody.innerHTML = '<tr><td colspan="5">No suspicious events detected.</td></tr>';
+            tbody.innerHTML = '<tr><td colspan="6">No suspicious events detected.</td></tr>';
         } else {
             events.forEach((event, index) => {
                 let rowClass = '';
@@ -87,6 +101,9 @@
                         <td>${event.ip ? event.ip : '-'}</td>
                         <td>${event.timestamp}</td>
                         <td>${event.details}</td>
+                        <td>
+                            ${event.ip ? `<button class="btn-danger" onclick="blockIP('${event.ip}')">Block IP</button>` : ''}
+                        </td>
                     </tr>`;
             });
         }
@@ -125,9 +142,88 @@
     setInterval(fetchEvents, 5000);
     fetchEvents();
 
+    function blockIP(ip) {
+        if (!confirm(`Are you sure you want to block the IP address: ${ip}?`)) {
+            return;
+        }
+        fetch(`/block/${ip}`, {
+                method: 'POST'
+            })
+            .then(res => res.json())
+            .then(data => {
+                if (data.status === 'blocked') {
+                    alert(`Successfully blocked IP: ${ip}`);
+                    fetchEvents();
+                } else if (data.status === 'already_blocked') {
+                    alert(`IP address ${ip} is already blocked.`);
+                } else {
+                    alert(`Error blocking IP: ${data.message}`);
+                }
+            })
+            .catch(err => {
+                console.error('Error blocking IP:', err);
+                alert('An unexpected error occurred. Check the console for details.');
+            });
+    }
+
     document.getElementById('search-ip').addEventListener('input', filterAndRenderEvents);
     document.getElementById('filter-type').addEventListener('change', filterAndRenderEvents);
     document.getElementById('start-datetime').addEventListener('change', filterAndRenderEvents);
     document.getElementById('end-datetime').addEventListener('change', filterAndRenderEvents);
+
+    function fetchRecentEvents() {
+        fetch('/recent-events')
+            .then(res => res.json())
+            .then(events => {
+                const tbody = document.getElementById('recent-events-tbody');
+                tbody.innerHTML = '';
+                if (!events || events.length === 0) {
+                    tbody.innerHTML = '<tr><td colspan="4" class="text-center">No recent suspicious events.</td></tr>';
+                    return;
+                }
+                events.forEach(event => {
+                    const row = `
+                        <tr>
+                            <td>${event.timestamp}</td>
+                            <td><span class="badge ${getBadgeClass(event.type)}">${event.type}</span></td>
+                            <td>
+                                ${event.ip}
+                                <button class="btn btn-sm btn-outline-danger ms-2" onclick="blockIp('${event.ip}')">Block</button>
+                            </td>
+                            <td>${event.details || ''}</td>
+                        </tr>
+                    `;
+                    tbody.innerHTML += row;
+                });
+            });
+    }
+
+    function getBadgeClass(type) {
+        switch (type) {
+            case 'Rate Limit Exceeded': return 'badge-danger';
+            case 'Suspicious User-Agent': return 'badge-warning';
+            case 'IP Blocked': return 'badge-dark';
+            default: return 'badge-secondary';
+        }
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+        // ... (existing chart and data logic)
+        fetchRecentEvents();
+        setInterval(fetchRecentEvents, 10000); // Refresh recent events every 10 seconds
+    });
 </script>
+<style>
+    .btn-danger {
+        background-color: #dc3545;
+        color: white;
+        border: none;
+        padding: 5px 10px;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+    .btn-danger:hover {
+        background-color: #c82333;
+    }
+</style>
 {% endblock %}

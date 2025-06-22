@@ -1,28 +1,103 @@
 {% extends "base.html" %}
 {% block content %}
-<div style="max-width:900px;margin:2.5rem auto 0 auto;">
-    <h2 style="text-align:center;margin:2rem 0 2.5rem 0;">System Logs</h2>
+<div style="max-width:1200px; margin:2.5rem auto 0 auto;">
+    <h2 style="text-align:center; margin:2rem 0 2.5rem 0;">Real-Time Nginx Traffic Logs</h2>
     <div class="table-container card">
         <table>
             <thead>
                 <tr>
                     <th>Timestamp</th>
-                    <th>Traffic</th>
-                    <th>Alerts</th>
-                    <th>Uptime</th>
+                    <th>IP Address</th>
+                    <th>Request</th>
+                    <th>Status</th>
+                    <th>Size (Bytes)</th>
+                    <th>User Agent</th>
                 </tr>
             </thead>
-            <tbody>
-                {% for log in logs %}
+            <tbody id="logs-tbody">
+                <!-- Real-time logs will be inserted here by JavaScript -->
                 <tr>
-                    <td>{{ log.timestamp }}</td>
-                    <td>{{ log.traffic }}</td>
-                    <td>{{ log.alerts }}</td>
-                    <td>{{ log.uptime }}</td>
+                    <td colspan="6" style="text-align:center;">Loading real-time logs...</td>
                 </tr>
-                {% endfor %}
             </tbody>
         </table>
     </div>
 </div>
+<script>
+let isPolling = true; // Flag to control the polling loop
+
+function fetchRealTimeLogs() {
+    if (!isPolling) return; // Stop if polling is disabled
+
+    fetch('/real-time-logs')
+        .then(res => {
+            if (!res.ok) {
+                // If response is not 2xx, throw an error to be caught by .catch
+                throw new Error(`HTTP error! status: ${res.status}`);
+            }
+            return res.json();
+        })
+        .then(logs => {
+            const tbody = document.getElementById('logs-tbody');
+            tbody.innerHTML = ''; // Clear existing rows
+            if (logs.length === 0) {
+                tbody.innerHTML = '<tr><td colspan="6" class="text-center">No recent traffic recorded or log file is empty.</td></tr>';
+                return;
+            }
+            logs.forEach(log => {
+                let statusClass = '';
+                if (log.status.startsWith('4')) statusClass = 'status-warning';
+                else if (log.status.startsWith('5')) statusClass = 'status-danger';
+                else if (log.status.startsWith('3')) statusClass = 'status-info';
+
+                const row = `
+                    <tr>
+                        <td>${log.timestamp}</td>
+                        <td>${log.ip}</td>
+                        <td>${log.request}</td>
+                        <td class="${statusClass}">${log.status}</td>
+                        <td>${log.size}</td>
+                        <td title="${log.user_agent}">${log.user_agent}</td>
+                    </tr>
+                `;
+                tbody.innerHTML += row;
+            });
+        })
+        .catch(err => {
+            console.error("Error fetching real-time logs:", err);
+            const tbody = document.getElementById('logs-tbody');
+            tbody.innerHTML = '<tr><td colspan="6" class="text-center text-danger">Could not fetch logs. Retrying shortly...</td></tr>';
+            // Stop polling on error to prevent spamming
+            // isPolling = false; 
+        })
+        .finally(() => {
+            // Schedule the next poll only after the current one has finished
+            setTimeout(fetchRealTimeLogs, 5000);
+        });
+}
+
+// Initial fetch
+fetchRealTimeLogs();
+
+// Stop polling when the user navigates away from the page
+window.addEventListener('beforeunload', () => {
+    isPolling = false;
+});
+</script>
+<style>
+    .status-warning {
+        color: #856404;
+        background-color: #fff3cd;
+        font-weight: bold;
+    }
+    .status-danger {
+        color: #721c24;
+        background-color: #f8d7da;
+        font-weight: bold;
+    }
+    .status-info {
+        color: #0c5460;
+        background-color: #d1ecf1;
+    }
+</style>
 {% endblock %}

@@ -16,15 +16,12 @@ body.dark-theme {
 
 /* Navbar */
 .navbar {
-    background: linear-gradient(90deg, #2a5298 0%, #1e3c72 100%);
-    color: white;
-    padding: 16px 32px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-radius: 0 0 18px 18px;
-    box-shadow: 0 4px 16px rgba(42, 82, 152, 0.08);
-    transition: background 0.4s;
+    padding: 1rem 2rem;
+    background-color: #fff;
+    border-bottom: 1px solid #eee;
 }
 
 .navbar .logo {
@@ -295,4 +292,25 @@ body.dark-theme .critical-event {
 body.dark-theme .warning-event {
     background: #bfae5a !important;
     color: #232526 !important;
+}
+
+/* Layout */
+.navbar-nav-right {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.btn-logout {
+    padding: 0.5rem 1rem;
+    background-color: #dc3545;
+    color: white;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.2s ease;
+}
+
+.btn-logout:hover {
+    background-color: #c82333;
 }

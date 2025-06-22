@@ -6,7 +6,7 @@ services:
     container_name: target-website
     restart: always
     expose:
-      - "5001"
+      - "8080"
     volumes:
       - ./target_website:/app
 
