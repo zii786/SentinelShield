@@ -22,6 +22,10 @@ services:
       - ./backend:/app
       # This shared volume is how it reads Nginx logs
       - nginx_logs:/var/log/nginx
+      # Share nginx config so python can write to blacklist.conf
+      - ./nginx:/etc/nginx
+      # Mount docker socket to allow nginx reloads
+      - /var/run/docker.sock:/var/run/docker.sock
     depends_on:
       - target_app
 
@@ -37,6 +41,7 @@ services:
       # Port 8080 for the admin to access the SentinelShield dashboard
       - "8080:8080"
     volumes:
+      - ./nginx:/etc/nginx
       # This shared volume is where Nginx writes logs
       - nginx_logs:/var/log/nginx
     depends_on:

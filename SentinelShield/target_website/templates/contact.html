@@ -1,39 +1,75 @@
-{% extends "base.html" %}
-{% block title %}Contact Us | MyCorp{% endblock %}
-{% block content %}
-<h1 class="mb-4">Contact Us</h1>
-<p>We're here to help and answer any question you might have. We look forward to hearing from you.</p>
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Contact - SentinelShield</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+      </head>
+      
+<body>
+    <!-- Loader Spinner -->
+<div class="spinner-wrapper">
+    <div class="spinner-border text-warning" role="status">
+      <span class="visually-hidden">Loading...</span>
+    </div>
+  </div>
+  
 
-<div class="row">
-    <div class="col-md-8">
-        <form>
-            <div class="mb-3">
-                <label for="name" class="form-label">Full Name</label>
-                <input type="text" class="form-control" id="name" required>
-            </div>
-            <div class="mb-3">
-                <label for="email" class="form-label">Email address</label>
-                <input type="email" class="form-control" id="email" required>
-            </div>
-            <div class="mb-3">
-                <label for="message" class="form-label">Message</label>
-                <textarea class="form-control" id="message" rows="5" required></textarea>
-            </div>
-            <button type="submit" class="btn btn-primary">Send Message</button>
-        </form>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container">
+    <a class="navbar-brand" href="/">SentinelShield</a>
+    <div class="collapse navbar-collapse">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="/index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="/how-it-works.html">How it Works</a></li>
+        <li class="nav-item"><a class="nav-link" href="/use-cases.html">Use Cases</a></li>
+        <li class="nav-item"><a class="nav-link" href="/team.html">Team</a></li>
+        <li class="nav-item"><a class="nav-link active" href="/contact.html">Contact</a></li>
+        <li class="nav-item">
+            <button class="btn btn-sm btn-warning ms-3" onclick="toggleDarkMode()">Toggle Dark Mode</button>
+          </li>
+          
+      </ul>
     </div>
-    <div class="col-md-4">
-        <h4>Our Office</h4>
-        <p>
-            123 Innovation Drive<br>
-            Tech City, TX 75001<br>
-            United States
-        </p>
-        <hr>
-        <h4>Email</h4>
-        <p>contact@mycorp.inc</p>
-        <h4>Phone</h4>
-        <p>(555) 123-4567</p>
-    </div>
-</div>
-{% endblock %} 
+  </div>
+</nav>
+
+<section class="py-5 bg-warning text-dark text-center">
+  <div class="container">
+    <h2 class="fw-bold">Get in Touch</h2>
+    <p>Interested in using SentinelShield? Request a demo or contact us below.</p>
+  </div>
+</section>
+
+<section class="py-5">
+  <div class="container">
+    <form>
+      <div class="mb-3">
+        <label class="form-label">Full Name</label>
+        <input type="text" class="form-control" placeholder="Enter your name">
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Email address</label>
+        <input type="email" class="form-control" placeholder="Enter your email">
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Message</label>
+        <textarea class="form-control" rows="4" placeholder="How can we help you?"></textarea>
+      </div>
+      <button type="submit" class="btn btn-warning">Send Message</button>
+    </form>
+  </div>
+</section>
+
+<footer class="bg-dark text-white py-4 text-center">
+  <div class="container">
+    <p>&copy; 2025 SentinelShield. We’ll get back to you within 24 hours.</p>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>

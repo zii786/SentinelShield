@@ -1,4 +1,73 @@
-/* Custom styles can go here */
+/* Core UI Enhancements */
 body {
-    padding-bottom: 70px; /* Adjust for the fixed footer height */
-} 
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #f9f9f9;
+    color: #212529;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  .navbar-brand {
+    font-weight: bold;
+  }
+  
+  h1, h2, h3, h4 {
+    font-family: 'Segoe UI Semibold', sans-serif;
+  }
+  
+  .shadow-sm {
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  }
+  
+  .shadow-sm:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  }
+  
+  footer {
+    font-size: 0.9rem;
+  }
+  
+  /* Form UI */
+  form input, form textarea {
+    border-radius: 8px;
+  }
+  form .btn {
+    border-radius: 20px;
+  }
+  
+  /* Dark Mode */
+  body.dark-mode {
+    background-color: #121212;
+    color: #e0e0e0;
+  }
+  
+  body.dark-mode .navbar,
+  body.dark-mode footer {
+    background-color: #1f1f1f !important;
+  }
+  
+  body.dark-mode .hero {
+    background: linear-gradient(to right, #1c1c1c, #2e2e2e);
+    color: white;
+  }
+  
+  body.dark-mode .shadow-sm {
+    background-color: #2b2b2b;
+    color: #e0e0e0;
+  }
+  
+  /* Loader Spinner */
+  .spinner-wrapper {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+  }
+  body.dark-mode .spinner-wrapper {
+    background-color: #121212;
+  }
+  

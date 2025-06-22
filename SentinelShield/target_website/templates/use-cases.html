@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Use Cases - SentinelShield</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+      </head>
+      
+<body>
+<!-- Loader Spinner -->
+<div class="spinner-wrapper">
+    <div class="spinner-border text-warning" role="status">
+      <span class="visually-hidden">Loading...</span>
+    </div>
+  </div>
+  
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container">
+    <a class="navbar-brand" href="/">SentinelShield</a>
+    <div class="collapse navbar-collapse">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="/how-it-works">How it Works</a></li>
+        <li class="nav-item"><a class="nav-link active" href="/use-cases">Use Cases</a></li>
+        <li class="nav-item"><a class="nav-link" href="/team">Team</a></li>
+        <li class="nav-item"><a class="nav-link" href="/contact">Contact</a></li>
+        <li class="nav-item">
+            <button class="btn btn-sm btn-warning ms-3" onclick="toggleDarkMode()">Toggle Dark Mode</button>
+          </li>
+          
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<section class="py-5 text-center bg-warning">
+  <div class="container">
+    <h2 class="fw-bold">Real-World Applications</h2>
+    <p>Where SentinelShield adds value and protection</p>
+  </div>
+</section>
+
+<section class="py-5">
+  <div class="container">
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="p-4 border rounded shadow-sm">
+          <h5>🛡️ Government Portals</h5>
+          <p>Protect citizen services from DDoS and traffic anomalies.</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="p-4 border rounded shadow-sm">
+          <h5>🏥 Healthcare Websites</h5>
+          <p>Prevent downtime and monitor sensitive patient record portals.</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="p-4 border rounded shadow-sm">
+          <h5>🏫 Educational Institutes</h5>
+          <p>Stop bot attacks during admissions, exam results, or e-learning systems.</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="p-4 border rounded shadow-sm">
+          <h5>📰 Public News Sites</h5>
+          <p>Track disinformation or spam comment bots in real time.</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="p-4 border rounded shadow-sm">
+          <h5>🌐 Startup MVPs</h5>
+          <p>Secure launch-stage products from abuse before scaling cloud costs.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="bg-dark text-white py-4 text-center">
+  <div class="container">
+    <p>&copy; 2025 SentinelShield. Trusted where security matters most.</p>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>

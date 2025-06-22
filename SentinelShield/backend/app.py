@@ -252,6 +252,122 @@ def recent_events():
     recent_events = sorted(events, key=lambda x: x.get('timestamp', ''), reverse=True)[:20]
     return jsonify(recent_events)
 
+@app.route('/block/<ip>', methods=['POST'])
+@login_required
+def block_ip(ip):
+    # Basic IP validation to prevent command injection
+    if not re.match(r"^\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}$", ip):
+        return jsonify({"status": "error", "message": "Invalid IP address format."}), 400
+
+    blacklist_path = '/etc/nginx/blacklist.conf'
+    nginx_container_name = 'sentinelshield-nginx-waf'
+    
+    try:
+        # Check if IP is already blocked to prevent duplicates
+        with open(blacklist_path, 'r') as f:
+            if f"deny {ip};" in f.read():
+                return jsonify({"status": "already_blocked", "ip": ip})
+
+        # 1. Add the IP to the blacklist file
+        with open(blacklist_path, 'a') as f:
+            f.write(f"deny {ip};\n")
+            
+        # 2. Reload Nginx configuration
+        # This command is executed from the sentinelshield-app container, which has docker client installed
+        # and the docker socket mounted.
+        reload_command = f"docker exec {nginx_container_name} nginx -s reload"
+        result = os.system(reload_command)
+        
+        if result == 0:
+            log_suspicious_event({
+                'type': 'IP Blocked',
+                'ip': ip,
+                'timestamp': datetime.now(timezone.utc).strftime('%Y-%m-%d %H:%M:%S'),
+                'details': f"IP {ip} was manually blocked by an administrator."
+            })
+            return jsonify({"status": "blocked", "ip": ip})
+        else:
+            return jsonify({
+                "status": "error", 
+                "message": f"IP {ip} was added to the blacklist, but the Nginx reload command failed. " \
+                           f"Exit code: {result}"
+            }), 500
+            
+    except Exception as e:
+        return jsonify({"status": "error", "message": str(e)}), 500
+
+@app.route('/blacklist')
+@login_required
+def blacklist_manager():
+    blacklist_path = '/etc/nginx/blacklist.conf'
+    blocked_ips = []
+    try:
+        with open(blacklist_path, 'r') as f:
+            lines = f.readlines()
+            for line in lines:
+                # Basic parsing for "deny 1.2.3.4;"
+                match = re.search(r"deny\s+([^;]+);", line)
+                if match:
+                    blocked_ips.append(match.group(1).strip())
+    except FileNotFoundError:
+        # If the file doesn't exist, it's fine, no IPs are blocked.
+        pass
+    except Exception as e:
+        # Handle other potential errors, maybe log them
+        print(f"Error reading blacklist file: {e}")
+
+    return render_template('blacklist.html', blocked_ips=blocked_ips)
+
+@app.route('/unblock/<ip>', methods=['POST'])
+@login_required
+def unblock_ip(ip):
+    # Basic IP validation
+    if not re.match(r"^\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}$", ip):
+        return jsonify({"status": "error", "message": "Invalid IP address format."}), 400
+
+    blacklist_path = '/etc/nginx/blacklist.conf'
+    nginx_container_name = 'sentinelshield-nginx-waf'
+    ip_unblocked = False
+
+    try:
+        with open(blacklist_path, 'r') as f:
+            lines = f.readlines()
+        
+        # Filter out the line with the IP to unblock
+        new_lines = []
+        for line in lines:
+            if f"deny {ip};" not in line:
+                new_lines.append(line)
+            else:
+                ip_unblocked = True
+        
+        if not ip_unblocked:
+            return jsonify({"status": "not_found", "message": f"IP {ip} was not found in the blacklist."})
+
+        with open(blacklist_path, 'w') as f:
+            f.writelines(new_lines)
+
+        # Reload Nginx
+        reload_command = f"docker exec {nginx_container_name} nginx -s reload"
+        result = os.system(reload_command)
+
+        if result == 0:
+            log_suspicious_event({
+                'type': 'IP Unblocked',
+                'ip': ip,
+                'timestamp': datetime.now(timezone.utc).strftime('%Y-%m-%d %H:%M:%S'),
+                'details': f"IP {ip} was manually unblocked by an administrator."
+            })
+            return jsonify({"status": "unblocked", "ip": ip})
+        else:
+            return jsonify({
+                "status": "error",
+                "message": f"IP {ip} was removed from the blacklist file, but Nginx reload failed."
+            }), 500
+
+    except Exception as e:
+        return jsonify({"status": "error", "message": str(e)}), 500
+
 def send_email_alert(subject, body):
     if not EMAIL_ALERTS_ENABLED:
         return

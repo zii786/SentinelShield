@@ -6,6 +6,9 @@ WORKDIR /app
 # Copy the backend application code
 COPY ./backend/ /app/
 
+# Install docker client to allow this container to reload nginx
+RUN apt-get update && apt-get install -y --no-install-recommends docker.io && rm -rf /var/lib/apt/lists/*
+
 # Install dependencies from requirements.txt
 RUN pip install --no-cache-dir -r requirements.txt
 
